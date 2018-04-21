@@ -43,7 +43,7 @@ function updateAll() {
 }
 
 function moveAll() {
-	if (isKitchenMode) {
+	if (isKitchenMode || (launchMeatMode || launchPlantMode)) {
 		pongPaddleMove();
 	} else {
 		playerCar.move();

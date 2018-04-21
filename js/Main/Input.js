@@ -83,7 +83,7 @@ function updateMousePos(evt) {
 function keyPressed(evt) {
 	evt.preventDefault();
 	//console.log("Key pressed: " + evt.keyCode);
-	if (isKitchenMode) {
+	if (isKitchenMode || (launchMeatMode || launchPlantMode)) {
     	keySetPong(evt, true);
     } else {
     	keySet(evt, playerCar, true);
@@ -122,7 +122,7 @@ function keyPressed(evt) {
 
 function keyReleased(evt) {
 	// console.log("Key released: " + evt.keyCode);
-	if (isKitchenMode) {
+	if (isKitchenMode || (launchPlantMode || launchMeatMode)) {
     	keySetPong(evt, false);
     } else {
     	keySet(evt, playerCar, false);
