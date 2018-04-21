@@ -38,6 +38,7 @@ function updateAll() {
 function moveAll() {
 	//player.move();
     if (isKitchenMode) {
+        ballMove();
         return;
     }
     if (isDrivingMode) {
@@ -47,11 +48,13 @@ function moveAll() {
 }
 
 function drawAll() {
-	colorRect(0,0, canvas.width,canvas.height, 'black');
+     colorRect(0,0, canvas.width,canvas.height, 'black');
     if (isKitchenMode) {
         drawKitchenBG();
         paddle1Draw();
         paddle2Draw();
+        drawNet();
+        ballDraw();
         return;
     }
     if (isDrivingMode) {
