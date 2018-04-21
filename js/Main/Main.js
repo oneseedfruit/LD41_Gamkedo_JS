@@ -49,6 +49,7 @@ function moveAll() {
 		playerCar.move();
 	}
 	updateGameStates();
+	cameraFollow();
 
 }
 
