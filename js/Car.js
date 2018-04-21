@@ -4,10 +4,16 @@ class Car {
     this.y = y;
     this.width = width;
     this.height = height;
+    this.centerX = width/2;
+    this.centerY = height/2;
   }
 
   drawCar(){
-    colorRect(this.x, this.y, this.width, this.height, 'green');
+    colorRect(this.x, this.y, this.width, this.height, 'orange');
+  }
+
+  moveCar(){
+
   }
 
 }
