@@ -1,0 +1,13 @@
+class Car {
+  constructor(x, y, width, height) {
+    this.x = x;
+    this.y = y;
+    this.width = width;
+    this.height = height;
+  }
+
+  drawCar(){
+    colorRect(this.x, this.y, this.width, this.height, 'green');
+  }
+
+}
