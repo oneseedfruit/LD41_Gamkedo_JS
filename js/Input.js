@@ -119,6 +119,7 @@ function keyPressed(evt) {
         case KEY_E:
             launchPlantMode = true;
             isDrivingMode = false;
+            break;
 	}
 };
 
