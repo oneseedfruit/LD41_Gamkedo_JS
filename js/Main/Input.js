@@ -17,6 +17,7 @@ const KEY_H = 72;
 const KEY_Q = 81;
 const KEY_E = 69;
 
+
 var mouseX = 0;
 var mouseY = 0;
 var mouseHeld = false;
@@ -37,11 +38,39 @@ function setupInput() {
 	document.addEventListener('keydown', keyPressed);
 	document.addEventListener('keyup', keyReleased);
 
+    playerCar.setupInput(KEY_W, KEY_D, KEY_S, KEY_A);
+    playerCar.setupInput(KEY_UP_ARROW, KEY_RIGHT_ARROW, KEY_DOWN_ARROW, KEY_LEFT_ARROW);
+
 	//player.setupInput();
 };
 
-function keySet(keyEvent, setTo) {
+function keySet(keyEvent, whichCar, setTo) {
+    if(keyEvent.keyCode == whichCar.controlKeyLeft) {
+        whichCar.keyHeld_TurnLeft = setTo;
+    }
+    if(keyEvent.keyCode == whichCar.controlKeyRight) {
+        whichCar.keyHeld_TurnRight = setTo;
+    }
+    if(keyEvent.keyCode == whichCar.controlKeyUp) {
+        whichCar.keyHeld_Gas = setTo;
+    }
+    if(keyEvent.keyCode == whichCar.controlKeyDown) {
+        whichCar.keyHeld_Reverse = setTo;
+    }
+}
 
+function keyPressed(evt) {
+    // console.log("Key pressed: "+evt.keyCode);
+    keySet(evt, playerCar, true);
+    
+
+    evt.preventDefault();
+}
+
+function keyReleased(evt) {
+    // console.log("Key pressed: "+evt.keyCode);
+    keySet(evt, playerCar, false);
+   
 }
 
 function updateMousePos(evt) {
@@ -60,7 +89,7 @@ function updateMousePos(evt) {
 function keyPressed(evt) {
 	evt.preventDefault();
 	//console.log("Key pressed: " + evt.keyCode);
-	keySet(evt, true);
+	keySet(evt, playerCar, true);
 	
 	switch(evt.keyCode) {
 		case KEY_W:
@@ -141,7 +170,7 @@ function keyPressed(evt) {
 
 function keyReleased(evt) {
 	// console.log("Key released: " + evt.keyCode);
-	keySet(evt, false);
+	   keySet(evt, playerCar, false);
 };
 
 function switchBackToDrivingMode(evt) {

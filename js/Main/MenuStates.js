@@ -15,7 +15,7 @@ function drawHelpScreen() {
 function showHelpScreenText() {
     colorText("How To Play", canvas.width/2, 50, "white", "30px Arial", "center", 1);
     colorText("Vehicle Mode:", 150, 150, "white", "20px Arial", "left", 1);
-    colorText("Movement: W, A, D", 150, 180, "white", "16px Arial", "left", 1);
+    colorText("Movement: W, A, S, D", 150, 180, "white", "16px Arial", "left", 1);
     colorText("Switch to Kitchen: SPACE, then in Kitchen Mode stop and wait for Q or E to be pressed", 150, 210, "white", "16px Arial", "left", 1);
     colorText("Switch to Kitchen and Launch Meat: Q", 150, 240, "white", "16px Arial", "left", 1);
     colorText("Switch to Kitchen and Launch Plant: E", 150, 270, "white", "16px Arial", "left", 1);
@@ -59,11 +59,12 @@ function setGameStates() {
     
     if (isDrivingMode) {
         drawTracks();
-	   //drawItems();
+        playerCar.draw();
+
     }
 }
 
-function upadteGameStates() {
+function updateGameStates() {
      if (mainMenuState) {
         return;
     }
