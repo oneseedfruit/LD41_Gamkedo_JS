@@ -29,6 +29,6 @@ function ballMove() {
 }
 
 function ballReset() {
-    ballX = canvas.width/2;
-    ballY = canvas.height/2;
+    ballX = 75;
+    ballY = 75;
 }
