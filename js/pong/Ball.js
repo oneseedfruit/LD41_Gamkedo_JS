@@ -31,7 +31,7 @@ function Ball(canvas) {
     }
     
     this.ballReset = function() {
-        this.ballX = canvas.width/2;
-        this.ballY = canvas.height/2;
+        this.ballX = 75;
+        this.ballY = 75;
     }
 }
