@@ -43,15 +43,16 @@ function updateAll() {
 }
 
 function moveAll() {
-   playerCar.move();
-   updateGameStates();
+	if (isKitchenMode) {
+		pongPaddleMove();
+	} else {
+		playerCar.move();
+	}
+	updateGameStates();
 
 }
 
 function drawAll() {
-     colorRect(0,0, canvas.width,canvas.height, 'black');
-     setGameStates();
-   
-     
-
+	colorRect(0,0, canvas.width,canvas.height, 'black');
+    setGameStates();
 }

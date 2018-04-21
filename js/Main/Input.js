@@ -1,22 +1,21 @@
+// Movement Keys
 const KEY_LEFT_ARROW = 37;
 const KEY_UP_ARROW = 38;
 const KEY_RIGHT_ARROW = 39;
 const KEY_DOWN_ARROW = 40;
+const KEY_W = 87;
+const KEY_A = 65;
+const KEY_S = 83;
+const KEY_D = 68;
 
 const KEY_BACKSPACE = 8
 const KEY_ENTER = 13;
 const KEY_ESCAPE = 27;
 const KEY_SPACE = 32;
-
-const KEY_W = 87;
-const KEY_A = 65;
-const KEY_S = 83;
-const KEY_D = 68;
 const KEY_P = 80;
 const KEY_H = 72;
 const KEY_Q = 81;
 const KEY_E = 69;
-
 
 var mouseX = 0;
 var mouseY = 0;
@@ -39,9 +38,9 @@ function setupInput() {
 	document.addEventListener('keyup', keyReleased);
 
     playerCar.setupInput(KEY_W, KEY_D, KEY_S, KEY_A);
-    playerCar.setupInput(KEY_UP_ARROW, KEY_RIGHT_ARROW, KEY_DOWN_ARROW, KEY_LEFT_ARROW);
+    //playerCar.setupInput(KEY_UP_ARROW, KEY_RIGHT_ARROW, KEY_DOWN_ARROW, KEY_LEFT_ARROW);
+    // Setting input again overides the first setup call
 
-	//player.setupInput();
 };
 
 function keySet(keyEvent, whichCar, setTo) {
@@ -59,18 +58,13 @@ function keySet(keyEvent, whichCar, setTo) {
     }
 }
 
-function keyPressed(evt) {
-    // console.log("Key pressed: "+evt.keyCode);
-    keySet(evt, playerCar, true);
-    
-
-    evt.preventDefault();
-}
-
-function keyReleased(evt) {
-    // console.log("Key pressed: "+evt.keyCode);
-    keySet(evt, playerCar, false);
-   
+function keySetPong(keyEvent, setTo) {
+	if(keyEvent.keyCode == KEY_A || keyEvent.keyCode == KEY_LEFT_ARROW) {
+        keyHeld_LeftPong = setTo;
+    }
+    if(keyEvent.keyCode == KEY_D || keyEvent.keyCode == KEY_RIGHT_ARROW) {
+        keyHeld_RightPong = setTo;
+    }
 }
 
 function updateMousePos(evt) {
@@ -89,7 +83,11 @@ function updateMousePos(evt) {
 function keyPressed(evt) {
 	evt.preventDefault();
 	//console.log("Key pressed: " + evt.keyCode);
-	keySet(evt, playerCar, true);
+	if (isKitchenMode) {
+    	keySetPong(evt, true);
+    } else {
+    	keySet(evt, playerCar, true);
+	}
 	
 	switch(evt.keyCode) {
 		case KEY_W:
@@ -124,7 +122,11 @@ function keyPressed(evt) {
 
 function keyReleased(evt) {
 	// console.log("Key released: " + evt.keyCode);
-	   keySet(evt, playerCar, false);
+	if (isKitchenMode) {
+    	keySetPong(evt, false);
+    } else {
+    	keySet(evt, playerCar, false);
+	} 
 };
 
 function mousePressed(evt) {
