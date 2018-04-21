@@ -3,8 +3,8 @@ function Ball(canvas) {
     this.ballX = 75;
     this.ballY = 75;
     
-    this.ballSpeedX = 10,
-    this.ballSpeedY = 10;
+    this.ballSpeedX = 7;
+    this.ballSpeedY = 7;
     
     this.ballDraw = function() {
         colorCircle(this.ballX, this.ballY, 10, "white");
@@ -33,13 +33,22 @@ function Ball(canvas) {
         if (this.ballY > paddle1Y && this.ballY < (paddle1Y + PADDLE_HEIGHT) 
         && this.ballX > paddle1X && this.ballX < paddle1X + PADDLE_THICKNESS) {
             var deltaX = this.ballX-(paddle1X+PADDLE_THICKNESS/2);
-            this.ballSpeedY = -this.ballSpeedX;
+            this.ballSpeedY = -this.ballSpeedY;
+            this.ballSpeedX = deltaX * 0.35;
+        }
+
+        if (this.ballY > paddle2Y && this.ballY < (paddle2Y + PADDLE_HEIGHT) 
+        && this.ballX > paddle2X && this.ballX < paddle2X + PADDLE_THICKNESS) {
+            var deltaX = this.ballX-(paddle2X+PADDLE_THICKNESS/2);
+            this.ballSpeedY = -this.ballSpeedY;
             this.ballSpeedX = deltaX * 0.35;
         }
     }
     
     this.ballReset = function() {
-        this.ballX = 75;
-        this.ballY = 75;
+        this.ballX = canvas.width/2;
+        this.ballY = canvas.height/2;
+        this.ballSpeedX = 5;
+        this.ballSpeedY = 5;
     }
 }

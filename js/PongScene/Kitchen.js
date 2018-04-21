@@ -13,7 +13,7 @@ function kitchenStuff() {
 
 
     //paddle 2
-    colorRect(paddle2X - PADDLE_THICKNESS/2, paddle2Y + PADDLE_DIST_FROM_EDGE - 10, PADDLE_THICKNESS, PADDLE_HEIGHT, "white");
+    colorRect(paddle2X, paddle2Y, PADDLE_THICKNESS, PADDLE_HEIGHT, "white");
 
 
     //net

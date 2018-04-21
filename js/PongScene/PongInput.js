@@ -66,25 +66,19 @@ function pongPressedE() {
         isKitchenMode = false;
     }
 }
-        
-
-        
-
 
 function pongPaddleMove() {
     if (keyHeld_LeftPong) {
         paddle1X -= PADDLE_SPEED;
         if (paddle1X <= 10 ) {
             paddle1X = 10;
-            paddle2X = 10;
         }
     }
-    
+
     if (keyHeld_RightPong) {
         paddle1X += PADDLE_SPEED;
         if (paddle1X >= 790 - PADDLE_THICKNESS) {
             paddle1X = 790 - PADDLE_THICKNESS;
-            paddle2X = 790 - PADDLE_THICKNESS;
         }
     }
 }
