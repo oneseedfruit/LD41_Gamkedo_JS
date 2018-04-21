@@ -113,12 +113,28 @@ function keyPressed(evt) {
             } 
             break;
         case KEY_Q:
-            launchMeatMode = true;
-            isDrivingMode = false;
+            if (isDrivingMode) {
+                launchMeatMode = true;
+                isDrivingMode = false;
+            } else if (launchPlantMode) {
+                launchMeatMode = true;
+                launchPlantMode = false;
+            } else if (isKitchenMode) {
+                launchMeatMode = true;
+                isKitchenMode = false;
+            }
             break;
         case KEY_E:
-            launchPlantMode = true;
-            isDrivingMode = false;
+            if (isDrivingMode) {
+               launchPlantMode = true;
+                isDrivingMode = false;   
+            } else if (launchMeatMode) {
+                launchPlantMode = true;
+                launchMeatMode = false;
+            } else if (isKitchenMode) {
+                launchPlantMode = true;
+                isKitchenMode = false;
+            }
             break;
 	}
 };
