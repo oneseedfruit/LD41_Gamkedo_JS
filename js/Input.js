@@ -14,6 +14,8 @@ const KEY_S = 83;
 const KEY_D = 68;
 const KEY_P = 80;
 const KEY_H = 72;
+const KEY_Q = 81;
+const KEY_E = 69;
 
 var mouseX = 0;
 var mouseY = 0;
@@ -85,6 +87,14 @@ function keyPressed(evt) {
                 mainMenuState = true;
                 helpState = false;
             }
+            if (launchPlantMode) {
+                launchPlantMode = false;
+                isDrivingMode = true;
+            }
+            if (launchMeatMode) {
+                launchMeatMode = false;
+                isDrivingMode = true;
+            }
             break;
         case KEY_P: 
             if (mainMenuState) {
@@ -100,7 +110,15 @@ function keyPressed(evt) {
             if (mainMenuState) {
                 helpState = true;
                 mainMenuState = false;
-            }
+            } 
+            break;
+        case KEY_Q:
+            launchMeatMode = true;
+            isDrivingMode = false;
+            break;
+        case KEY_E:
+            launchPlantMode = true;
+            isDrivingMode = false;
 	}
 };
 

@@ -40,13 +40,23 @@ function setGameStates() {
     }
     
     if (isKitchenMode) {
-        drawKitchenBG();
-        paddle1Draw();
-        paddle2Draw();
-        drawNet();
+        kitchenStuff()
         ballDraw();
         return;
     }
+    
+    if (launchMeatMode) {
+        kitchenStuff();
+        meatDraw();
+        return;
+    }
+    
+    if (launchPlantMode) {
+        kitchenStuff();
+        plantDraw();
+        return;
+    }
+    
     if (isDrivingMode) {
         drawTracks();
 	   //drawItems();
@@ -65,6 +75,14 @@ function upadteGameStates() {
         return;
     }
     if (isDrivingMode) {
+        return;
+    }
+    if (launchMeatMode) {
+        ballMove();
+        return;
+    }
+    if (launchPlantMode) {
+        ballMove();
         return;
     }
 }
