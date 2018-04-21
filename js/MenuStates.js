@@ -1,3 +1,4 @@
+
 function drawMainMenu() {
     colorRect(0, 0, canvas.width, canvas.height);
 }

@@ -20,8 +20,11 @@ function ballMove() {
     ballX += ballSpeedX;
     ballY += ballSpeedY;
     
-    if (ballY >= canvas.height) {
+    if (ballY >= canvas.height || ballY <= 0) {
         ballReset();
+    }
+    if (ballX <= 0 || ballX >= canvas.width) {
+        ballSpeedX *= -1;
     }
 }
 
