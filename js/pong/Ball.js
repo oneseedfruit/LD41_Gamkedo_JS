@@ -1,3 +1,4 @@
+// Ball class constructor: 1 class per file, file name is "class name".js
 function Ball(canvas) {
     this.ballX = 75;
     this.ballY = 75;
