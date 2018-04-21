@@ -22,5 +22,48 @@ function showHelpScreenText() {
     colorText("Kitchen Mode:", 150, 400, "white", "16px Arial", "left", 1);
     colorText("Movement: A, D", 150, 450, "white", "16px Arial", "left", 1);
     colorText("Switch to Vehicle: SPACE", 150, 500, "white", "16px Arial", "left", 1);
-    colorText("Press [SPACE] to return to menu", canvas.width/2, 550, "white", "16px Arial", "center", 1);
+    colorText("Press  [SPACE]  To Return To Menu Or  [P]  to Play", canvas.width/2, 550, "white", "16px Arial", "center", 1);
+}
+
+function setGameStates() {
+     if (mainMenuState) {
+        drawMainMenu();
+        showMenuText();
+        return;
+    }
+    
+    if (helpState) {
+        drawHelpScreen();
+        showHelpScreenText();
+        return;
+    }
+    
+    if (isKitchenMode) {
+        drawKitchenBG();
+        paddle1Draw();
+        paddle2Draw();
+        drawNet();
+        ballDraw();
+        return;
+    }
+    if (isDrivingMode) {
+        drawTracks();
+	   //drawItems();
+    }
+}
+
+function upadteGameStates() {
+     if (mainMenuState) {
+        return;
+    }
+    if (helpState) {
+        return;
+    }
+    if (isKitchenMode) {
+        ballMove();
+        return;
+    }
+    if (isDrivingMode) {
+        return;
+    }
 }

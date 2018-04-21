@@ -91,6 +91,10 @@ function keyPressed(evt) {
                 isDrivingMode = true;
                 mainMenuState = false;
             }
+            if (helpState) {
+                helpState = false;
+                isDrivingMode = true;
+            }
             break;
         case KEY_H:
             if (mainMenuState) {

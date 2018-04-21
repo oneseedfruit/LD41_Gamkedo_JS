@@ -37,46 +37,11 @@ function updateAll() {
 
 function moveAll() {
 	//player.move();
-    if (mainMenuState) {
-        return;
-    }
-    if (helpState) {
-        return;
-    }
-    if (isKitchenMode) {
-        ballMove();
-        return;
-    }
-    if (isDrivingMode) {
-        return;
-    }
+   upadteGameStates();
 
 }
 
 function drawAll() {
      colorRect(0,0, canvas.width,canvas.height, 'black');
-    if (mainMenuState) {
-        drawMainMenu();
-        showMenuText();
-        return;
-    }
-    
-    if (helpState) {
-        drawHelpScreen();
-        showHelpScreenText();
-        return;
-    }
-    
-    if (isKitchenMode) {
-        drawKitchenBG();
-        paddle1Draw();
-        paddle2Draw();
-        drawNet();
-        ballDraw();
-        return;
-    }
-    if (isDrivingMode) {
-        drawTracks();
-	   //drawItems();
-    }
+     setGameStates();
 }
