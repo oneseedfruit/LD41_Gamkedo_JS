@@ -22,7 +22,13 @@ function Ball(canvas) {
         this.ballX += this.ballSpeedX;
         this.ballY += this.ballSpeedY;
         
-        if (this.ballY >= canvas.height || this.ballY <= 0) {
+        if (this.ballY >= canvas.height) {
+            // Player loses food, resets for now
+            this.ballReset();
+        }
+
+        if (this.ballY <= 0) {
+            // Food gets to hippogriff, resets for now
             this.ballReset();
         }
         

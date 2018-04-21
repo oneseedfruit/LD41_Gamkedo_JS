@@ -41,29 +41,31 @@ function pongPressedH() {
     }
 }
 
-function pongPressedQ() {
-    if (isDrivingMode) {
+function pongReleaseMeat() {
+    /* if (isDrivingMode) {
         launchMeatMode = true;
         isDrivingMode = false;
     } else if (launchPlantMode) {
         launchMeatMode = true;
         launchPlantMode = false;
-    } else if (isKitchenMode) {
+    }*/ if (isKitchenMode) {
+        launchPlantMode = false;
         launchMeatMode = true;
-        isKitchenMode = false;
+        ball.ballReset();
     }
 }
 
 function pongPressedE() {
-    if (isDrivingMode) {
+    /*if (isDrivingMode) {
         launchPlantMode = true;
         isDrivingMode = false;
     } else if (launchMeatMode) {
         launchPlantMode = true;
         launchMeatMode = false;
-    } else if (isKitchenMode) {
+    }*/ if (isKitchenMode) {
+        launchMeatMode = false;
         launchPlantMode = true;
-        isKitchenMode = false;
+        ball.ballReset();
     }
 }
 

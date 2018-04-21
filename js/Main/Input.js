@@ -112,7 +112,7 @@ function keyPressed(evt) {
             pongPressedH();
             break;
         case KEY_Q:
-            pongPressedQ();
+            pongReleaseMeat();
             break;
         case KEY_E:
             pongPressedE();

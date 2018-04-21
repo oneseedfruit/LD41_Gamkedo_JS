@@ -41,20 +41,15 @@ function setGameStates() {
     }
     
     if (isKitchenMode) {
-        kitchenStuff()
-        ball.ballDraw();
-        return;
-    }
-    
-    if (launchMeatMode) {
         kitchenStuff();
-        ball.meatDraw();
-        return;
-    }
-    
-    if (launchPlantMode) {
-        kitchenStuff();
-        ball.plantDraw();
+        if (launchPlantMode) {
+            ball.plantDraw();
+            return;
+        }
+        if (launchMeatMode) {
+            ball.meatDraw();
+            return;
+        }
         return;
     }
     
@@ -73,21 +68,19 @@ function updateGameStates() {
         return;
     }
     if (isKitchenMode) {
-        ball.ballMove();
-        movePaddleAI();
+        if (launchMeatMode) {
+            ball.ballMove();
+            movePaddleAI();
+            return;
+        }
+        if (launchPlantMode) {
+            ball.ballMove();
+            movePaddleAI();
+            return;
+        }
         return;
     }
     if (isDrivingMode) {
-        return;
-    }
-    if (launchMeatMode) {
-        ball.ballMove();
-        movePaddleAI();
-        return;
-    }
-    if (launchPlantMode) {
-        ball.ballMove();
-        movePaddleAI();
         return;
     }
 }

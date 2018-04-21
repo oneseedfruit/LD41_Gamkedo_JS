@@ -53,6 +53,5 @@ function moveAll() {
 }
 
 function drawAll() {
-	colorRect(0,0, canvas.width,canvas.height, 'black');
     setGameStates();
 }
