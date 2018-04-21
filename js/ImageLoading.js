@@ -1,5 +1,5 @@
 var carPic = document.createElement("img");
-var OtherCarPic = document.createElement("img");
+
 var trackPics = [];
 
 var picsToLoad = 0; // set automatically based on imageList in loadImages()
@@ -17,7 +17,7 @@ function beginLoadingImage (imgVar, fileName) {
 	imgVar.src = "images/"+fileName;
 }
 
-function loadImageFortrackCode(trackCode, fileName) {
+function loadImageForTrackCode(trackCode, fileName) {
 	trackPics[trackCode] = document.createElement("img");
 	beginLoadingImage(trackPics[trackCode], fileName);
 }
@@ -25,13 +25,9 @@ function loadImageFortrackCode(trackCode, fileName) {
 function loadImages() {
 	var imageList = [
 	{varName:carPic, theFile: "car.png"},
-	{varName:OtherCarPic, theFile: "car2.png"}
 	
-	// {TrackType:TRACK_ROAD, theFile: "track_road.png"},
-	// {TrackType:TRACK_WALL, theFile: "track_wall.png"},
-	// {TrackType:TRACK_GOAL, theFile: "track_checker.png"},
-	// {TrackType:TRACK_TREE, theFile: "track_trees.png"},
-	// {TrackType:TRACK_FLAG, theFile: "track_flag.png"}
+	{TrackType:TRACK_ROAD, theFile: "track_road.png"},
+	{TrackType:TRACK_WALL, theFile: "track_wall.png"}
 	];
 	
 	picsToLoad = imageList.length;
@@ -40,7 +36,7 @@ function loadImages() {
 		if(imageList[i].varName != undefined) {
 			beginLoadingImage (imageList[i].varName, imageList[i].theFile);
 		} else {
-			loadImageFortrackCode(imageList[i].TrackType, imageList[i].theFile );
+			loadImageForTrackCode(imageList[i].TrackType, imageList[i].theFile);
 		}
 	}
 }

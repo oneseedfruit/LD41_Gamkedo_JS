@@ -23,7 +23,7 @@ function startGame() {
 	setInterval(updateAll, 1000/FRAMES_PER_SECOND);
 	
 	setupInput();
-	//loadTrack();
+	loadTrack(levelOne);
 }
 
 function updateAll() {
@@ -36,13 +36,12 @@ function updateAll() {
 }
 
 function moveAll() {
-
 	//player.move();
 
 }
 
 function drawAll() {
 	colorRect(0,0, canvas.width,canvas.height, 'black');
-	//drawTracks();
+	drawTracks();
 	//drawItems();
 }
