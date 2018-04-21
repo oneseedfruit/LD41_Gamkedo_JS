@@ -105,65 +105,19 @@ function keyPressed(evt) {
 		case KEY_RIGHT_ARROW:
 			break;
         case KEY_SPACE:
-            if (isDrivingMode && !mainMenuState && !helpState){
-                 isKitchenMode = true;
-                isDrivingMode = false;
-            } else if (isKitchenMode) {
-                isDrivingMode = true;
-                isKitchenMode = false;
-            }
-            if (helpState) {
-                mainMenuState = true;
-                helpState = false;
-            }
-            if (launchPlantMode) {
-                launchPlantMode = false;
-                isDrivingMode = true;
-            }
-            if (launchMeatMode) {
-                launchMeatMode = false;
-                isDrivingMode = true;
-            }
+           pongPressedSpace();
             break;
         case KEY_P: 
-            if (mainMenuState) {
-                isDrivingMode = true;
-                mainMenuState = false;
-            }
-            if (helpState) {
-                helpState = false;
-                isDrivingMode = true;
-            }
+            pongPressedP();
             break;
         case KEY_H:
-            if (mainMenuState) {
-                helpState = true;
-                mainMenuState = false;
-            } 
+            pongPressedH();
             break;
         case KEY_Q:
-            if (isDrivingMode) {
-                launchMeatMode = true;
-                isDrivingMode = false;
-            } else if (launchPlantMode) {
-                launchMeatMode = true;
-                launchPlantMode = false;
-            } else if (isKitchenMode) {
-                launchMeatMode = true;
-                isKitchenMode = false;
-            }
+            pongPressedQ();
             break;
         case KEY_E:
-            if (isDrivingMode) {
-               launchPlantMode = true;
-                isDrivingMode = false;   
-            } else if (launchMeatMode) {
-                launchPlantMode = true;
-                launchMeatMode = false;
-            } else if (isKitchenMode) {
-                launchPlantMode = true;
-                isKitchenMode = false;
-            }
+            pongPressedE();
             break;
 	}
 };
@@ -172,13 +126,6 @@ function keyReleased(evt) {
 	// console.log("Key released: " + evt.keyCode);
 	   keySet(evt, playerCar, false);
 };
-
-function switchBackToDrivingMode(evt) {
-    if (isKitchenMode == true) {
-        isKitchenMode = false;
-        console.log("kitchen mode = false")
-        }
-}
 
 function mousePressed(evt) {
 	mouseHeld = true;
