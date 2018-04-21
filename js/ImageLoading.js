@@ -40,7 +40,7 @@ function loadImages() {
 		if(imageList[i].varName != undefined) {
 			beginLoadingImage (imageList[i].varName, imageList[i].theFile);
 		} else {
-		loadImageFortrackCode(imageList[i].TrackType, imageList[i].theFile );
+			loadImageFortrackCode(imageList[i].TrackType, imageList[i].theFile );
 		}
 	}
 }
