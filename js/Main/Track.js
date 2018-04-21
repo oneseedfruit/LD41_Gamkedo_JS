@@ -49,9 +49,12 @@ function drawTracks() {
 		for(var eachCol=0;eachCol<TRACK_COLS;eachCol++) { 
 			var tileKindHere = trackGrid[arrayIndex];
 			var useImg = trackPics[tileKindHere];
-			canvasContext.drawImage(useImg,
-					drawTileX, drawTileY);
-					
+			if (tileVisible(drawTileX,drawTileY)) {
+				if (!useImg)
+					console.log("Missing trackPics[" + tileKindHere + "] in drawTracks!");
+				else
+					canvasContext.drawImage(useImg,drawTileX,drawTileY);
+			}
 			drawTileX += TRACK_W;	
 			arrayIndex++;
 			
@@ -61,6 +64,14 @@ function drawTracks() {
 	} // end of for each row
 } // end of drawTracks func
 
+function tileVisible(tx,ty) {
+	//console.log("tileVisible "+tx+","+ty+" must be inside " + camPanX+","+camPanY+" and "+camPanX+canvas.width+","+camPanY+canvas.height);
+	return (
+		(tx >= camPanX -TRACK_W) &&
+		(ty >= camPanY - TRACK_H) &&
+		(tx <= camPanX+canvas.width) &&
+		(ty <= camPanY+canvas.height));
+}
 
 function carTrackHandling(whichCar) {
 	var carTrackCol = Math.floor(whichCar.x / TRACK_W);

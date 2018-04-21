@@ -1,7 +1,7 @@
-const GROUNDSPEED_DECAY_MULT = 0.94;
+const GROUNDSPEED_DECAY_MULT = 0.95;
 const DRIVE_POWER = 0.5;
 const REVERSE_POWER = 0.2;
-const TURN_RATE = 0.06;
+const TURN_RATE = 0.09;
 const MIN_SPEED_TO_TURN = 0.5;
 
 function carClass() {
@@ -17,17 +17,17 @@ function carClass() {
 	this.keyHeld_TurnLeft = false;
 	this.keyHeld_TurnRight = false;
 
-	this.controlKeyUp;
-	this.controlKeyRight;
-	this.controlKeyDown;
-	this.controlKeyLeft;
+	// this.controlKeyUp;
+	// this.controlKeyRight;
+	// this.controlKeyDown;
+	// this.controlKeyLeft;
 
-	this.setupInput = function(upKey, rightKey, downKey, leftKey) {
-		this.controlKeyUp = upKey;
-		this.controlKeyRight = rightKey;
-		this.controlKeyDown = downKey;
-		this.controlKeyLeft = leftKey;
-	}
+	// this.setupInput = function(upKey, rightKey, downKey, leftKey) {
+	// 	this.controlKeyUp = upKey;
+	// 	this.controlKeyRight = rightKey;
+	// 	this.controlKeyDown = downKey;
+	// 	this.controlKeyLeft = leftKey;
+	// }
 
 	this.reset = function(whichImage, carName) {
 		this.name = carName;
