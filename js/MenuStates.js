@@ -1,3 +1,4 @@
+
 function drawMainMenu() {
     colorRect(0, 0, canvas.width, canvas.height);
 }
@@ -41,19 +42,19 @@ function setGameStates() {
     
     if (isKitchenMode) {
         kitchenStuff()
-        ballDraw();
+        ball.ballDraw();
         return;
     }
     
     if (launchMeatMode) {
         kitchenStuff();
-        meatDraw();
+        ball.meatDraw();
         return;
     }
     
     if (launchPlantMode) {
         kitchenStuff();
-        plantDraw();
+        ball.plantDraw();
         return;
     }
     
@@ -71,18 +72,18 @@ function upadteGameStates() {
         return;
     }
     if (isKitchenMode) {
-        ballMove();
+        ball.ballMove();
         return;
     }
     if (isDrivingMode) {
         return;
     }
     if (launchMeatMode) {
-        ballMove();
+        ball.ballMove();
         return;
     }
     if (launchPlantMode) {
-        ballMove();
+        ball.ballMove();
         return;
     }
 }

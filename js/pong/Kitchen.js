@@ -1,6 +1,8 @@
 var launchMeatMode = false;
 var launchPlantMode = false;
 
+var ball = new Ball(document.getElementById('gameCanvas'));
+
 function kitchenStuff() {
     //kitchen bg
     colorRect(0, 0, canvas.width/2, canvas.height/2, "black");

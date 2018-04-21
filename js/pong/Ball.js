@@ -1,31 +1,37 @@
-var ballX = 75,
-ballY = 75;
-
-var ballSpeedX = 10,
-ballSpeedY = 10;
-
-function ballDraw() {
-    colorCircle(ballX, ballY, 10, "white");
-}
-
-function meatDraw() {
-    colorCircle(ballX, ballY, 10, "red");
-}
-
-function plantDraw() {
-    colorCircle(ballX, ballY, 10, "green");
-}
-
-function ballMove() {
-    ballX += ballSpeedX;
-    ballY += ballSpeedY;
+function Ball(canvas) {
+    this.ballX = 75;
+    this.ballY = 75;
     
-    if (ballY >= canvas.height) {
-        ballReset();
+    this.ballSpeedX = 10,
+    this.ballSpeedY = 10;
+    
+    this.ballDraw = function() {
+        colorCircle(this.ballX, this.ballY, 10, "white");
+    };
+    
+    this.meatDraw = function() {
+        colorCircle(this.ballX, this.ballY, 10, "red");
+    };
+    
+    this.plantDraw = function() {
+        colorCircle(this.ballX, this.ballY, 10, "green");
+    };
+    
+    this.ballMove = function() {
+        this.ballX += this.ballSpeedX;
+        this.ballY += this.ballSpeedY;
+        
+        if (this.ballY >= canvas.height || this.ballY <= 0) {
+            this.ballReset();
+        }
+        
+        if (this.ballX <= 0 || this.ballX >= canvas.width) {
+            this.ballSpeedX *= -1;
+        }
     }
-}
-
-function ballReset() {
-    ballX = canvas.width/2;
-    ballY = canvas.height/2;
+    
+    this.ballReset = function() {
+        this.ballX = canvas.width/2;
+        this.ballY = canvas.height/2;
+    }
 }
