@@ -42,6 +42,7 @@ function setGameStates() {
     
     if (isKitchenMode) {
         kitchenStuff();
+        movePaddleAI();
         if (launchPlantMode) {
             ball.plantDraw();
             return;
@@ -68,14 +69,8 @@ function updateGameStates() {
         return;
     }
     if (isKitchenMode) {
-        if (launchMeatMode) {
+        if (launchMeatMode || launchPlantMode) {
             ball.ballMove();
-            movePaddleAI();
-            return;
-        }
-        if (launchPlantMode) {
-            ball.ballMove();
-            movePaddleAI();
             return;
         }
         return;

@@ -1,7 +1,7 @@
 // Ball class constructor: 1 class per file, file name is "class name".js
 function Ball(canvas) {
-    this.ballX = 75;
-    this.ballY = 75;
+    this.ballX = 400 - PADDLE_THICKNESS/2;
+    this.ballY = paddle2X + (PADDLE_THICKNESS / 2);
     
     this.ballSpeedX = 10;
     this.ballSpeedY = 10;
@@ -52,11 +52,9 @@ function Ball(canvas) {
     }
     
     this.ballReset = function() {
-        this.ballX = canvas.width/2;
-        this.ballY = canvas.height/2;
+        this.ballX = 75;
+        this.ballY = 75;
         this.ballSpeedX = 8;
-        if (Math.random() > 0.5) {
-            this.ballSpeedY *= -1;
-        }
+        this.ballSpeedY = 8;
     }
 }

@@ -21,6 +21,11 @@ function pongPressedSpace() {
         launchMeatMode = false;
         isDrivingMode = true;
     }
+
+    ball.ballX = 400 - PADDLE_THICKNESS/2;
+    ball.ballY = paddle2X + (PADDLE_THICKNESS / 2);
+    paddle2X = 400 - PADDLE_THICKNESS/2;
+    paddle2Y = 0 + PADDLE_DIST_FROM_EDGE;
 }
 
 function pongPressedP() {
