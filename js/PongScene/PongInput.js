@@ -70,7 +70,6 @@ function pongPressedE() {
 function pongPaddleMove() {
     if (keyHeld_LeftPong) {
         paddle1X -= PADDLE_SPEED;
-        paddle2X -= PADDLE_SPEED;
         if (paddle1X <= 10 + PADDLE_THICKNESS/2) {
             paddle1X = 10 + PADDLE_THICKNESS/2;
             paddle2X = 10 + PADDLE_THICKNESS/2;
@@ -78,7 +77,6 @@ function pongPaddleMove() {
     }
     if (keyHeld_RightPong) {
         paddle1X += PADDLE_SPEED;
-        paddle2X += PADDLE_SPEED;
         if (paddle1X >= 790 - PADDLE_THICKNESS/2) {
             paddle1X = 790 - PADDLE_THICKNESS/2;
             paddle2X = 790 - PADDLE_THICKNESS/2;

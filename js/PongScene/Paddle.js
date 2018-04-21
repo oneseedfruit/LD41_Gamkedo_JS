@@ -9,4 +9,12 @@ var paddle1X = 400,
 var paddle2X = 400,
     paddle2Y = 0;
 
+function movePaddleAI() {
+    var centreOfPaddle2Y = paddle2X + (PADDLE_THICKNESS / 2);
+        if (centreOfPaddle2Y < ball.ballY - 35) {
+            paddle2X += 6;
+        } else if (centreOfPaddle2Y > ball.ballY + 35) {
+                    paddle2X -= 6;
+        }
+}
 

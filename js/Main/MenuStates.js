@@ -74,6 +74,7 @@ function updateGameStates() {
     }
     if (isKitchenMode) {
         ball.ballMove();
+        movePaddleAI();
         return;
     }
     if (isDrivingMode) {
@@ -81,10 +82,12 @@ function updateGameStates() {
     }
     if (launchMeatMode) {
         ball.ballMove();
+        movePaddleAI();
         return;
     }
     if (launchPlantMode) {
         ball.ballMove();
+        movePaddleAI();
         return;
     }
 }
