@@ -12,6 +12,8 @@ const KEY_W = 87;
 const KEY_A = 65;
 const KEY_S = 83;
 const KEY_D = 68;
+const KEY_P = 80;
+const KEY_H = 72;
 
 var mouseX = 0;
 var mouseY = 0;
@@ -22,8 +24,11 @@ var mouseCanvasX = 0;
 var isKitchenMode = false;
 var isDrivingMode = true;
 
+var mainMenuState = true;
+var helpState = false;
+
 function setupInput() {
-	canvas.addEventListener('mousemove', updateMousePos);
+	canvas.addEventListener("mousemove", updateMousePos);
 	canvas.addEventListener('mousedown', mousePressed);
 	canvas.addEventListener('mouseup', mouseReleased);
 	
@@ -40,8 +45,8 @@ function keySet(keyEvent, setTo) {
 function updateMousePos(evt) {
 	var rect = canvas.getBoundingClientRect();
 	var root = document.documentElement;
-	mouseX = evt.clientX - rect.left - root.scrollLeft;
-	mouseY = evt.clientY - rect.top - root.scrollTop;
+	var mouseX = evt.clientX - rect.left - root.scrollLeft;
+	var mouseY = evt.clientY - rect.top - root.scrollTop;
 
 	mouseCanvasX = Math.floor(mouseX * (canvas.width/canvas.clientWidth));
 	mouseCanvasY = Math.floor(mouseY * (canvas.height/canvas.clientHeight));
@@ -69,14 +74,29 @@ function keyPressed(evt) {
 		case KEY_RIGHT_ARROW:
 			break;
         case KEY_SPACE:
-            if (isDrivingMode){
+            if (isDrivingMode && !mainMenuState && !helpState){
                  isKitchenMode = true;
                 isDrivingMode = false;
             } else if (isKitchenMode) {
                 isDrivingMode = true;
                 isKitchenMode = false;
             }
+            if (helpState) {
+                mainMenuState = true;
+                helpState = false;
+            }
             break;
+        case KEY_P: 
+            if (mainMenuState) {
+                isDrivingMode = true;
+                mainMenuState = false;
+            }
+            break;
+        case KEY_H:
+            if (mainMenuState) {
+                helpState = true;
+                mainMenuState = false;
+            }
 	}
 };
 

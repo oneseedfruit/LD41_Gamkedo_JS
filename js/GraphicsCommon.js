@@ -18,9 +18,14 @@ function colorCircle(centerX,centerY, radius, fillColor) {
 	canvasContext.fill();
 }
 
-function colorText(showWords, textX,textY, fillColor) {
-	canvasContext.fillStyle = fillColor;
-	canvasContext.fillText(showWords, textX, textY);
+function colorText(showWords,textX,textY,fillColor,fontface,textAlign = 'left',opacity = 1) {
+  canvasContext.save();
+  canvasContext.textAlign = textAlign;
+  canvasContext.font = fontface;
+  canvasContext.globalAlpha = opacity;
+  canvasContext.fillStyle = fillColor;
+  canvasContext.fillText(showWords, textX, textY);
+  canvasContext.restore();
 }
 
 function coloredOutlineRectCornertoCorner(corner1X, corner1Y, corner2X, corner2Y, lineColor) {
