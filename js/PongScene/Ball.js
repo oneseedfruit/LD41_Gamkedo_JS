@@ -3,8 +3,8 @@ function Ball(canvas) {
     this.ballX = 75;
     this.ballY = 75;
     
-    this.ballSpeedX = 7;
-    this.ballSpeedY = 7;
+    this.ballSpeedX = 10;
+    this.ballSpeedY = 10;
     
     this.ballDraw = function() {
         colorCircle(this.ballX, this.ballY, 10, "white");
@@ -48,7 +48,9 @@ function Ball(canvas) {
     this.ballReset = function() {
         this.ballX = canvas.width/2;
         this.ballY = canvas.height/2;
-        this.ballSpeedX = 5;
-        this.ballSpeedY = 5;
+        this.ballSpeedX = 8;
+        if (Math.random() > 0.5) {
+            this.ballSpeedY *= -1;
+        }
     }
 }
