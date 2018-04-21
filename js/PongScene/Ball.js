@@ -29,6 +29,13 @@ function Ball(canvas) {
         if (this.ballX <= 0 || this.ballX >= canvas.width) {
             this.ballSpeedX *= -1;
         }
+
+        if (this.ballY > paddle1Y && this.ballY < (paddle1Y + PADDLE_HEIGHT) 
+        && this.ballX > paddle1X && this.ballX < paddle1X + PADDLE_THICKNESS) {
+            var deltaX = this.ballX-(paddle1X+PADDLE_THICKNESS/2);
+            this.ballSpeedY = -this.ballSpeedX;
+            this.ballSpeedX = deltaX * 0.35;
+        }
     }
     
     this.ballReset = function() {

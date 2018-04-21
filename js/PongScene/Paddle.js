@@ -3,8 +3,8 @@ const PADDLE_THICKNESS = 100;
 const PADDLE_DIST_FROM_EDGE = 60;
 const PADDLE_SPEED = 20;
 
-var paddle1X = 400,
-    paddle1Y = 250;
+var paddle1X = 400 - PADDLE_THICKNESS/2,
+    paddle1Y = 600 - PADDLE_DIST_FROM_EDGE;
 
 var paddle2X = 400,
     paddle2Y = 0;

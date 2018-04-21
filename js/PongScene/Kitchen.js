@@ -9,7 +9,7 @@ function kitchenStuff() {
 
 
     //paddle 1
-    colorRect(paddle1X - PADDLE_THICKNESS/2, canvas.height - PADDLE_DIST_FROM_EDGE, PADDLE_THICKNESS, PADDLE_HEIGHT, "white");
+    colorRect(paddle1X, paddle1Y, PADDLE_THICKNESS, PADDLE_HEIGHT, "white");
 
 
     //paddle 2
