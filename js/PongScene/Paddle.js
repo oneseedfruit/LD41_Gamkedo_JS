@@ -11,11 +11,11 @@ var paddle2X = 400 - PADDLE_THICKNESS/2,
 
 function movePaddleAI() {
     var gotoX = ball.ballX; 
-    if (this.ballSpeedX < 0 && ball.ballX) { 
+    if (this.ballSpeedX < 0) { 
             gotoX = (canvas.width / 2);
         } 
      var centreOfPaddle2X = paddle2X + (PADDLE_THICKNESS / 2);
-    if (ball.ballY <= canvas.width/2) {
+    if (ball.ballY <= canvas.height/2) {
         if (centreOfPaddle2X < gotoX - 35) {
             paddle2X += PADDLE_SPEED;
         } else if (centreOfPaddle2X > gotoX + 35) {
