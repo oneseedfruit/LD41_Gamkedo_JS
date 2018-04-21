@@ -37,11 +37,25 @@ function updateAll() {
 
 function moveAll() {
 	//player.move();
+    if (isKitchenMode) {
+        return;
+    }
+    if (isDrivingMode) {
+        return;
+    }
 
 }
 
 function drawAll() {
 	colorRect(0,0, canvas.width,canvas.height, 'black');
-	drawTracks();
-	//drawItems();
+    if (isKitchenMode) {
+        drawKitchenBG();
+        paddle1Draw();
+        paddle2Draw();
+        return;
+    }
+    if (isDrivingMode) {
+        drawTracks();
+	   //drawItems();
+    }
 }

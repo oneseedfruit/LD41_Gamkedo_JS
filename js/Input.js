@@ -19,6 +19,9 @@ var mouseHeld = false;
 var mouseCanvasY = 0;
 var mouseCanvasX = 0;
 
+var isKitchenMode = false;
+var isDrivingMode = true;
+
 function setupInput() {
 	canvas.addEventListener('mousemove', updateMousePos);
 	canvas.addEventListener('mousedown', mousePressed);
@@ -65,6 +68,15 @@ function keyPressed(evt) {
 		case KEY_D:
 		case KEY_RIGHT_ARROW:
 			break;
+        case KEY_SPACE:
+            if (isDrivingMode){
+                 isKitchenMode = true;
+                isDrivingMode = false;
+            } else if (isKitchenMode) {
+                isDrivingMode = true;
+                isKitchenMode = false;
+            }
+            break;
 	}
 };
 
@@ -72,6 +84,13 @@ function keyReleased(evt) {
 	// console.log("Key released: " + evt.keyCode);
 	keySet(evt, false);
 };
+
+function switchBackToDrivingMode(evt) {
+    if (isKitchenMode == true) {
+        isKitchenMode = false;
+        console.log("kitchen mode = false")
+        }
+}
 
 function mousePressed(evt) {
 	mouseHeld = true;
