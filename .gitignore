@@ -1,2 +1,5 @@
+#Temp Files Ignore
+*.*~
 .DS_Store
-js/.DS_Store
+*.swp
+.vscode/launch.json
