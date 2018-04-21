@@ -8,7 +8,9 @@ window.onload = function() {
 	canvasContext = canvas.getContext('2d');
 
 	colorRect(0,0, canvas.width,canvas.height, 'black');
-	colorText("LOADING IMAGES", canvas.width/2, canvas.height/2, 'white');
+	var loadingText = "LOADING IMAGES";
+	var textWidth = canvasContext.measureText(Math.floor(loadingText));  
+	colorText(loadingText, canvas.width/2 - textWidth.width * 2, canvas.height/2, 'white');
 	loadImages();
 }
 
@@ -40,6 +42,7 @@ function moveAll() {
 }
 
 function drawAll() {
-	//drawTrack();
+	colorRect(0,0, canvas.width,canvas.height, 'black');
+	//drawTracks();
 	//drawItems();
 }

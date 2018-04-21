@@ -48,19 +48,28 @@ function updateMousePos(evt) {
 };
 
 function keyPressed(evt) {
-	console.log("Key pressed: " + evt.keyCode);
+	evt.preventDefault();
+	//console.log("Key pressed: " + evt.keyCode);
 	keySet(evt, true);
 	
 	switch(evt.keyCode) {
 		case KEY_W:
+		case KEY_UP_ARROW:
 			break;
 		case KEY_A:
+		case KEY_LEFT_ARROW:
+			break;
+		case KEY_S:
+		case KEY_DOWN_ARROW:
+			break;
+		case KEY_D:
+		case KEY_RIGHT_ARROW:
 			break;
 	}
 };
 
 function keyReleased(evt) {
-	console.log("Key released: " + evt.keyCode);
+	// console.log("Key released: " + evt.keyCode);
 	keySet(evt, false);
 };
 
