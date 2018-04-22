@@ -5,9 +5,12 @@ function Ball(canvas) {
     
     this.ballSpeedX = 10;
     this.ballSpeedY = 10;
+
+    this.cookedLevel = 0;
     
     this.meatDraw = function() {
         colorCircle(this.ballX, this.ballY, 10, "red");
+
     };
     
     this.plantDraw = function() {
@@ -37,6 +40,7 @@ function Ball(canvas) {
         if (this.ballY < canvas.height/2 + cookingThickness/2 &&
             this.ballY > canvas.height/2 - cookingThickness/2) {
             smokeScreenEffect(this.ballX, this.ballY);
+            this.cookedLevel++;
         }
 
         if (this.ballY > paddle1Y && this.ballY < (paddle1Y + PADDLE_HEIGHT) 

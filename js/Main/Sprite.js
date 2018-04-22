@@ -31,15 +31,15 @@ function sprite(options) {
 
     that.render = function(x, y, withAng) {
         canvasContext.save();
-        canvasContext.translate(x + that.width / 2, y + that.height / 2);
+        canvasContext.translate(x /*+ that.width / 4*/, y /*+ that.height / 4*/);
         canvasContext.rotate(withAng);
         that.context.drawImage(that.image,
                                frameIndex * that.width / numberOfFrames,
                                0,
                                that.width / numberOfFrames,
                                that.height,
-                               -that.width/2,
-                               -that.height/2,
+                               -that.width/4,
+                               -that.height/4,
                                that.width / numberOfFrames,
                                that.height);
         canvasContext.restore();
