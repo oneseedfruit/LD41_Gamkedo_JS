@@ -116,7 +116,10 @@ function keyPressed(evt) {
             }
             break;
         case KEY_H:
-            pongPressedH();
+            if (mainMenuState) {
+                helpState = true;
+                mainMenuState = false;
+            }
             break;
         case KEY_Q:
             pongReleaseMeat();

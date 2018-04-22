@@ -23,13 +23,6 @@ function switchBetweenDrivingAndCooking() {
     paddle2Y = 0 + PADDLE_DIST_FROM_EDGE;
 }
 
-function pongPressedH() {
-    if (mainMenuState) {
-        helpState = true;
-        mainMenuState = false;
-    }
-}
-
 function pongReleaseMeat() {
     if (isKitchenMode && !foodInPlay) {
         launchMeatMode = true;

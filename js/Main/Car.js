@@ -76,10 +76,12 @@ function carClass() {
 
 		this.x += Math.cos(this.ang) * this.speed;
 		this.y += Math.sin(this.ang) * this.speed;
-		this.distanceTravelled += (Math.cos(this.ang) * this.speed) + (Math.sin(this.ang) * this.speed);
-		if (this.distanceTravelled >= 100) {
+		this.distanceTravelled += (Math.abs(Math.cos(this.ang) * this.speed)) + Math.abs((Math.sin(this.ang) * this.speed));
+		if (this.distanceTravelled >= 300) {
 			var currentFrameIndex = fuelMeterSprite.getFrameIndex();
-			fuelMeterSprite.setFrameIndex(currentFrameIndex++);
+			currentFrameIndex++;
+			fuelMeterSprite.setFrameIndex(currentFrameIndex);
+			this.distanceTravelled = 0;
 		} 
 		
 		//Cam point leads player around
