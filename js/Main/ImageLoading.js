@@ -42,7 +42,7 @@ function setUpImages() {
 	hippoCarPicTailwag.onload = function () {
 		hippoCarPicTailwag = true;
 	}
-	hippoCarPicTailwag.src = "images/foodTruck_spritesheet_tailwag.png";
+	hippoCarPicTailwag.src = "images/foodTruck_tailwag.png";
 }
 
 function loadImages() {
