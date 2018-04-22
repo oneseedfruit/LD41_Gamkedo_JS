@@ -1,7 +1,7 @@
 var foodInPlay = false;
 
 function drawMainMenu() {
-    colorRect(0, 0, canvas.width, canvas.height);
+    colorRect(0, 0, canvas.width, canvas.height, "black");
 }
 
 function showMenuText() {
@@ -81,6 +81,10 @@ function setGameStates() {
         canvasContext.restore();
 
     }
+    if (gameOverState) {
+        drawMainMenu();
+        colorText("you lose!\npress enter to go to menu", canvas.width/2, canvas.height/2, "white", "20px Arial", "center", 1);
+    }
 }
 
 function updateGameStates() {
@@ -98,6 +102,9 @@ function updateGameStates() {
         return;
     }
     if (isDrivingMode) {
+        return;
+    }
+    if (gameOverState) {
         return;
     }
 }

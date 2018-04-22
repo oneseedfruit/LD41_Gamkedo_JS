@@ -2,6 +2,7 @@ var canvas, canvasContext;
 var paused = false;
 
 var playerCar = new carClass();
+var timer = new TimerClass();
 
 const FRAMES_PER_SECOND = 30;
 
@@ -26,6 +27,7 @@ function startGame() {
 	setInterval(updateAll, 1000/FRAMES_PER_SECOND);
 	setupInput();
 	loadTrack(levelOne);
+    timer.setupTimer();
 }
 
 function loadTrack(whichLevel) {
@@ -56,4 +58,6 @@ function moveAll() {
 function drawAll() {
     setGameStates();
     particles.draw();
+    timer.drawTimer();
+    timer.alertMessage();
 }

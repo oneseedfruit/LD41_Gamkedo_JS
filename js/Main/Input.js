@@ -28,6 +28,7 @@ var isDrivingMode = true;
 
 var mainMenuState = true;
 var helpState = false;
+var gameOverState = false;
 
 function setupInput() {
 	canvas.addEventListener("mousemove", updateMousePos);
@@ -98,10 +99,14 @@ function keyPressed(evt) {
 		case KEY_RIGHT_ARROW:
 			break;
         case KEY_SPACE:
-            switchBetweenDrivingAndCooking();
+            if (!gameOverState) {
+             switchBetweenDrivingAndCooking();   
+            }
             break;
         case KEY_P: 
             pongPressedP();
+            isDrivingMode = true;
+            timer.secondsRemaining = 20;
             break;
         case KEY_H:
             pongPressedH();
@@ -112,6 +117,11 @@ function keyPressed(evt) {
         case KEY_E:
             pongPressedE();
             break;
+        case KEY_ENTER:
+            if (gameOverState) {
+                mainMenuState = true;
+                gameOverState = false;
+            }
 	}
 };
 
