@@ -1,4 +1,5 @@
 var carPic = document.createElement("img");
+var particlePic = document.createElement("img");
 
 var trackPics = [];
 
@@ -25,7 +26,8 @@ function loadImageForTrackCode(trackCode, fileName) {
 function loadImages() {
 	var imageList = [
 	{varName:carPic, theFile: "car.png"},
-	
+	{varName:particlePic, theFile: "particle.png"},
+
 	{TrackType:TRACK_ROAD, theFile: "track_road.png"},
 	{TrackType:TRACK_WALL, theFile: "track_wall.png"},
 	{TrackType:TRACK_GOAL, theFile: "track_goal.png"},

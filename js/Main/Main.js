@@ -37,9 +37,9 @@ function updateAll() {
 	if(paused){
 		return;
 	}
-
 	moveAll();
 	drawAll();
+	particles.update();
 }
 
 function moveAll() {
@@ -55,4 +55,5 @@ function moveAll() {
 
 function drawAll() {
     setGameStates();
+    particles.draw();
 }

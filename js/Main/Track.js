@@ -1,5 +1,5 @@
-const TRACK_W = 70;
-const TRACK_H = 70;
+const TRACK_W = 150;
+const TRACK_H = 150;
 const TRACK_GAP = 2;
 const TRACK_COLS = 20;
 const TRACK_ROWS = 15;

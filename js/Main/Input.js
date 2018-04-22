@@ -36,15 +36,10 @@ function setupInput() {
 	
 	document.addEventListener('keydown', keyPressed);
 	document.addEventListener('keyup', keyReleased);
-
-    // playerCar.setupInput(KEY_W, KEY_D, KEY_S, KEY_A);
-    //playerCar.setupInput(KEY_UP_ARROW, KEY_RIGHT_ARROW, KEY_DOWN_ARROW, KEY_LEFT_ARROW);
-    // Setting input again overides the first setup call
-
 };
 
 function keySet(keyEvent, whichCar, setTo) {
-    if(keyEvent.keyCode== KEY_A || keyEvent.keyCode == KEY_LEFT_ARROW) {
+    if(keyEvent.keyCode == KEY_A || keyEvent.keyCode == KEY_LEFT_ARROW) {
         whichCar.keyHeld_TurnLeft = setTo;
     }
     if(keyEvent.keyCode == KEY_D || keyEvent.keyCode == KEY_RIGHT_ARROW) {

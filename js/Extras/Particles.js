@@ -1,7 +1,7 @@
 // a very simple particle system that rotates scales and fades sprites
 
 const PARTICLES_ENABLED = true; // if false, no particles at all
-const HALF_AS_MANY_PARTICLES = true; // if true, ignore some requests for particles!
+const HALF_AS_MANY_PARTICLES = false; // if true, ignore some requests for particles!
 
 var particles = new particleSystem();
 var particlesOntop = new particleSystem();

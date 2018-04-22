@@ -8,18 +8,13 @@ function switchBetweenDrivingAndCooking() {
     } else if (isKitchenMode) {
         isDrivingMode = true;
         isKitchenMode = false;
+        launchPlantMode = false;
+        launchMeatMode = false;
+        foodInPlay = false;
     }
     if (helpState) {
         mainMenuState = true;
         helpState = false;
-    }
-    if (launchPlantMode) {
-        launchPlantMode = false;
-        isDrivingMode = true;
-    }
-    if (launchMeatMode) {
-        launchMeatMode = false;
-        isDrivingMode = true;
     }
 
     ball.ballX = 400 - PADDLE_THICKNESS/2;

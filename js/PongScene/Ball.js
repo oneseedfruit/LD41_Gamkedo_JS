@@ -34,6 +34,11 @@ function Ball(canvas) {
             this.ballSpeedX *= -1;
         }
 
+        if (this.ballY < canvas.height/2 + cookingThickness/2 &&
+            this.ballY > canvas.height/2 - cookingThickness/2) {
+            smokeScreenEffect(this.ballX, this.ballY);
+        }
+
         if (this.ballY > paddle1Y && this.ballY < (paddle1Y + PADDLE_HEIGHT) 
         && this.ballX > paddle1X && this.ballX < paddle1X + PADDLE_THICKNESS) {
             var deltaX = this.ballX-(paddle1X+PADDLE_THICKNESS/2);

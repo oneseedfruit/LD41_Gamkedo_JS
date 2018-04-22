@@ -58,12 +58,12 @@ function setGameStates() {
                 var stateText = "Hippogriff fed!";
                 var measuredText = canvasContext.measureText(Math.floor(stateText));
                 colorText(stateText,canvas.width/2 - measuredText.width/2 ,canvas.height/1.25,
-                            "white","30px Arial", "center", 1);
+                            "black","30px Arial", "center", 1);
             } else if (ball.ballY >= canvas.height) {
                 var stateText = "Food lost...";
                 var measuredText = canvasContext.measureText(Math.floor(stateText));
                 colorText(stateText,canvas.width/2 - measuredText.width/2 ,canvas.height/1.25,
-                            "white","30px Arial", "center", 1);
+                            "black","30px Arial", "center", 1);
             }
         }
         return;
