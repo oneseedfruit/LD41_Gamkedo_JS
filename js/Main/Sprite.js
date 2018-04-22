@@ -29,20 +29,23 @@ function sprite(options) {
 		frameIndex = 0;
 	}
 
-    that.render = function(x, y, withAng) {
-        canvasContext.save();
-        canvasContext.translate(x + that.width / 2, y + that.height / 2);
-        canvasContext.rotate(withAng);
-        that.context.drawImage(that.image,
-                               frameIndex * that.width / numberOfFrames,
-                               0,
-                               that.width / numberOfFrames,
-                               that.height,
-                               -that.width/2,
-                               -that.height/2,
-                               that.width / numberOfFrames,
-                               that.height);
-        canvasContext.restore();
-    }
+  -that.width
+  -that.height
+
+  that.render = function(x, y, withAng) {
+      canvasContext.save();
+      canvasContext.translate(x, y);
+      canvasContext.rotate(withAng);
+      that.context.drawImage(that.image,
+                             frameIndex * that.width / numberOfFrames,
+                             0,
+                             that.width / numberOfFrames,
+                             that.height,
+                             -(that.width / numberOfFrames)/1.79,
+                             -that.height/1.79,
+                             (that.width / numberOfFrames),
+                             that.height);
+      canvasContext.restore();
+  }
     return that;
 }
