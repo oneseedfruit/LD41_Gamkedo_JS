@@ -22,7 +22,9 @@ function TimerClass() {
         }
         if (this.secondsRemaining == 0) {
             if (isDrivingMode || isKitchenMode) {
-             gameOverState = true;   
+                isKitchenMode = false;
+                isDrivingMode = false;
+                gameOverState = true;   
             }
         }
     }

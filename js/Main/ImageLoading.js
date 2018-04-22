@@ -43,9 +43,6 @@ function setUpImages() {
 		numberOfFrames: 3,
 		ticksPerFrame: 10,
 	});
-	hippoCarPicTailwag.onload = function () {
-		hippoCarPicTailwagLoaded = true;
-	}
 	hippoCarPicTailwag.src = "images/foodTruck_tailwag.png";
 
 	fuelMeterSprite = sprite({
@@ -57,9 +54,6 @@ function setUpImages() {
 		numberOfFrames: 9,
 		ticksPerFrame: 0,
 	});
-	fuelMeterPic.onload = function () {
-		fuelMeterPicLoaded = true;
-	}
 	fuelMeterPic.src = "images/fuelMeter.png";
 }
 
@@ -67,6 +61,7 @@ function loadImages() {
 	var imageList = [
 	{varName: hippoCarPic, theFile: "foodTruck.png"},
 	{varName: particlePic, theFile: "particle.png"},
+	//{varName: particlePic, theFile: "particle.png"},
 
 	{TrackType:TRACK_ROAD, theFile: "track_road.png"},
 	{TrackType:TRACK_WALL, theFile: "track_wall.png"},

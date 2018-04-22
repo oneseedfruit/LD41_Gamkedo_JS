@@ -33,13 +33,13 @@ function setGameStates() {
         drawMainMenu();
         showMenuText();
         return;
-    }
+    };
     
     if (helpState) {
         drawHelpScreen();
         showHelpScreenText();
         return;
-    }
+    };
     
     if (isKitchenMode) {
         kitchenStuff();
@@ -67,7 +67,7 @@ function setGameStates() {
             }
         }
         return;
-    }
+    };
     
     if (isDrivingMode) {
         canvasContext.save(); // needed to undo this .translate() used for scroll
@@ -80,6 +80,7 @@ function setGameStates() {
         playerCar.draw();
         canvasContext.restore();
         fuelMeterSprite.render(canvas.width/2 - (fuelMeterSprite.width/9)/2,15);
+        return;
     }
     if (gameOverState) {
         drawMainMenu();

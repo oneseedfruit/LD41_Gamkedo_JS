@@ -15,6 +15,7 @@ function Ball(canvas) {
     
     this.plantDraw = function() {
         colorCircle(this.ballX, this.ballY, 10, "green");
+        //canvasContext.drawImage();
     };
     
     this.ballMove = function() {
