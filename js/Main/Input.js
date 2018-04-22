@@ -106,6 +106,7 @@ function keyPressed(evt) {
             break;
         case KEY_P: 
             pongPressedP();
+            isKitchenMode = false;
             isDrivingMode = true;
             timer.secondsRemaining = 20;
             break;

@@ -21,7 +21,9 @@ function TimerClass() {
              colorText("I'm hungry!!", canvas.width/2, canvas.height/2, "white", "20px Arial", "center", 1)   
         }
         if (this.secondsRemaining == 0) {
-            gameOverState = true;
+            if (isDrivingMode || isKitchenMode) {
+             gameOverState = true;   
+            }
         }
     }
 }
