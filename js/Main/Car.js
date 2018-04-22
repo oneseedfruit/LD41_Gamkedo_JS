@@ -36,7 +36,7 @@ function carClass() {
 
 		for(var eachRow=0;eachRow<TRACK_ROWS;eachRow++) {
 			for(var eachCol=0;eachCol<TRACK_COLS;eachCol++) {
-				var arrayIndex = rowColToArrayIndex(eachCol, eachRow); 
+				var arrayIndex = rowColToArrayIndex(eachCol, eachRow);
 				if(trackGrid[arrayIndex] == TRACK_PLAYERSTART) {
 					trackGrid[arrayIndex] = TRACK_ROAD;
 					this.ang = -Math.PI/2;
