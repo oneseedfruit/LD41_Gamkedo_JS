@@ -14,6 +14,7 @@ window.onload = function() {
 	var textWidth = canvasContext.measureText(Math.floor(loadingText));  
 	colorText(loadingText, canvas.width/2 - textWidth.width * 2, canvas.height/2, 'white');
 	loadImages();
+	setUpImages();
 }
 
 function imageLoadingDoneSoStartGame() {
@@ -29,7 +30,7 @@ function startGame() {
 
 function loadTrack(whichLevel) {
 	trackGrid = whichLevel.slice();
-	playerCar.reset(carPic, "Angry Bird");
+	playerCar.reset(hippoCarPic, "Angry Bird");
 }
 
 

@@ -1,4 +1,10 @@
-var carPic = document.createElement("img");
+var hippoCarPic = document.createElement("img");
+var hippoCarPicLoaded = false;
+
+var hippoCarPicTailwag = document.createElement("img");
+var hippoCarPicTailwagLoaded = false;
+var hippoCarPicTailwagSprite;
+
 var particlePic = document.createElement("img");
 
 var trackPics = [];
@@ -23,11 +29,14 @@ function loadImageForTrackCode(trackCode, fileName) {
 	beginLoadingImage(trackPics[trackCode], fileName);
 }
 
+function setUpImages() {
+
+}
+
 function loadImages() {
 	var imageList = [
-	{varName:carPic, theFile: "car.png"},
+	{varName: hippoCarPic, theFile: "foodTruck.png"},
 	{varName:particlePic, theFile: "particle.png"},
-
 	{TrackType:TRACK_ROAD, theFile: "track_road.png"},
 	{TrackType:TRACK_WALL, theFile: "track_wall.png"},
 	{TrackType:TRACK_GOAL, theFile: "track_goal.png"},
