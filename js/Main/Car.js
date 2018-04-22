@@ -75,6 +75,7 @@ function carClass() {
 
 	this.draw = function() {
 		  drawBitmapCenteredWithRotation(this.myCarPic, this.x,this.y, this.ang);
-          hippoCarPicTailwagSprite.render(this.x,this.y, this.ang); hippoCarPicTailwagSprite.update();
+          hippoCarPicTailwagSprite.render(this.x,this.y,this.ang); 
+          hippoCarPicTailwagSprite.update();
 	}
 }
