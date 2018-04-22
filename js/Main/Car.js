@@ -9,6 +9,7 @@ function carClass() {
 	this.y = 75;
 	this.width = 110;
 	this.height = 96;
+	this.distanceTravelled = 0;
 	this.ang = 0;
 	this.speed = 0;
 	this.myCarPic; // which picture to use
@@ -75,6 +76,11 @@ function carClass() {
 
 		this.x += Math.cos(this.ang) * this.speed;
 		this.y += Math.sin(this.ang) * this.speed;
+		this.distanceTravelled += (Math.cos(this.ang) * this.speed) + (Math.sin(this.ang) * this.speed);
+		if (this.distanceTravelled >= 100) {
+			var currentFrameIndex = fuelMeterSprite.getFrameIndex();
+			fuelMeterSprite.setFrameIndex(currentFrameIndex++);
+		} 
 		
 		//Cam point leads player around
 		this.camX = this.x + Math.cos(this.ang) * this.camDist * this.speed;

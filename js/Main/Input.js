@@ -105,10 +105,15 @@ function keyPressed(evt) {
             }
             break;
         case KEY_P: 
-            pongPressedP();
-            isKitchenMode = false;
-            isDrivingMode = true;
-            timer.secondsRemaining = 20;
+            if (mainMenuState) {
+                isDrivingMode = true;
+                mainMenuState = false;
+                timer.secondsRemaining = 20;
+            }
+            if (helpState) {
+                helpState = false;
+                isDrivingMode = true;
+            }
             break;
         case KEY_H:
             pongPressedH();
@@ -117,7 +122,7 @@ function keyPressed(evt) {
             pongReleaseMeat();
             break;
         case KEY_E:
-            pongPressedE();
+            pongReleaseVeg();
             break;
         case KEY_ENTER:
             if (gameOverState) {

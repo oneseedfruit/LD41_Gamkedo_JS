@@ -23,17 +23,6 @@ function switchBetweenDrivingAndCooking() {
     paddle2Y = 0 + PADDLE_DIST_FROM_EDGE;
 }
 
-function pongPressedP() {
-    if (mainMenuState) {
-        isDrivingMode = true;
-        mainMenuState = false;
-    }
-    if (helpState) {
-        helpState = false;
-        isDrivingMode = true;
-    }
-}
-
 function pongPressedH() {
     if (mainMenuState) {
         helpState = true;
@@ -42,14 +31,7 @@ function pongPressedH() {
 }
 
 function pongReleaseMeat() {
-    /* if (isDrivingMode) {
-        launchMeatMode = true;
-        isDrivingMode = false;
-    } else if (launchPlantMode) {
-        launchMeatMode = true;
-        launchPlantMode = false;
-    }*/ if (isKitchenMode && !foodInPlay) {
-        //launchPlantMode = false;
+    if (isKitchenMode && !foodInPlay) {
         launchMeatMode = true;
         foodInPlay = true;
         // meat supply -1;
@@ -57,15 +39,8 @@ function pongReleaseMeat() {
     }
 }
 
-function pongPressedE() {
-    /*if (isDrivingMode) {
-        launchPlantMode = true;
-        isDrivingMode = false;
-    } else if (launchMeatMode) {
-        launchPlantMode = true;
-        launchMeatMode = false;
-    }*/ if (isKitchenMode && !foodInPlay) {
-        //launchMeatMode = false;
+function pongReleaseVeg() {
+    if (isKitchenMode && !foodInPlay) {
         launchPlantMode = true;
         foodInPlay = true;
         // veggie supply -1;
