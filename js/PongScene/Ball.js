@@ -53,8 +53,8 @@ function Ball(canvas) {
     }
     
     this.ballReset = function() {
-        this.ballX = 75;
-        this.ballY = 75;
+        this.ballX = 100;
+        this.ballY = 100;
         this.ballSpeedX = 8;
         this.ballSpeedY = 8;
     }

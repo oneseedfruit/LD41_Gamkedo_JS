@@ -53,7 +53,7 @@ function pongReleaseMeat() {
     } else if (launchPlantMode) {
         launchMeatMode = true;
         launchPlantMode = false;
-    }*/ if (isKitchenMode) {
+    }*/ if (isKitchenMode && !foodInPlay) {
         //launchPlantMode = false;
         launchMeatMode = true;
         foodInPlay = true;
@@ -69,7 +69,7 @@ function pongPressedE() {
     } else if (launchMeatMode) {
         launchPlantMode = true;
         launchMeatMode = false;
-    }*/ if (isKitchenMode) {
+    }*/ if (isKitchenMode && !foodInPlay) {
         //launchMeatMode = false;
         launchPlantMode = true;
         foodInPlay = true;
