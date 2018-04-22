@@ -18,7 +18,7 @@ function countLoadedImagesAndLaunchIfReady() {
 			imageLoadingDoneSoStartGame();
 		}
 	}
-	
+
 function beginLoadingImage (imgVar, fileName) {
 	imgVar.onload = countLoadedImagesAndLaunchIfReady
 	imgVar.src = "images/"+fileName;
@@ -30,7 +30,19 @@ function loadImageForTrackCode(trackCode, fileName) {
 }
 
 function setUpImages() {
-
+	hippoCarPicTailwagSprite = sprite({
+		context: canvasContext,
+		width: 408,
+		height: 136,
+		image: hippoCarPicTailwag,
+		loop: true,
+		numberOfFrames: 3,
+		ticksPerFrame: 10,
+	});
+	hippoCarPicTailwag.onload = function () {
+		hippoCarPicTailwag = true;
+	}
+	hippoCarPicTailwag.src = "images/foodTruck_spritesheet_tailwag.png";
 }
 
 function loadImages() {
@@ -41,9 +53,9 @@ function loadImages() {
 	{TrackType:TRACK_WALL, theFile: "track_wall.png"},
 	{TrackType:TRACK_GOAL, theFile: "track_goal.png"},
 	];
-	
+
 	picsToLoad = imageList.length;
-	
+
 	for(var i=0; i<imageList.length; i++){
 		if(imageList[i].varName != undefined) {
 			beginLoadingImage (imageList[i].varName, imageList[i].theFile);

@@ -11,7 +11,7 @@ window.onload = function() {
 
 	colorRect(0,0, canvas.width,canvas.height, 'black');
 	var loadingText = "LOADING IMAGES";
-	var textWidth = canvasContext.measureText(Math.floor(loadingText));  
+	var textWidth = canvasContext.measureText(Math.floor(loadingText));
 	colorText(loadingText, canvas.width/2 - textWidth.width * 2, canvas.height/2, 'white');
 	loadImages();
 	setUpImages();
@@ -51,7 +51,6 @@ function moveAll() {
 	}
 	updateGameStates();
 	cameraFollow();
-
 }
 
 function drawAll() {
