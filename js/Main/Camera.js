@@ -13,8 +13,8 @@ function cameraFollow() {
 
     var cameraFocusCenterX = camPanX + canvas.width/2;
     var cameraFocusCenterY = camPanY + canvas.height/2;
-    var playerDistFromCameraFocusX = Math.abs(playerCar.x - cameraFocusCenterX);
-    var playerDistFromCameraFocusY = Math.abs(playerCar.y -cameraFocusCenterY);
+//    var playerDistFromCameraFocusX = Math.abs(playerCar.x - cameraFocusCenterX);
+  //  var playerDistFromCameraFocusY = Math.abs(playerCar.y - cameraFocusCenterY);
     /*if(playerDistFromCameraFocusX > PLAYER_DIST_FROM_CENTER_BEFORE_CAMERA_PAN_X) {
       if(cameraFocusCenterX < playerCar.x)  {
         camPanX += CAM_SCROLL_SPEED;
@@ -29,8 +29,8 @@ function cameraFollow() {
         camPanY -= CAM_SCROLL_SPEED;
       }
     }*/
-    camPanX += 0.13*(playerCar.x - cameraFocusCenterX);
-    camPanY += 0.13*(playerCar.y - cameraFocusCenterY);
+    camPanX += 0.13*(playerCar.camX - cameraFocusCenterX);
+    camPanY += 0.13*(playerCar.camY - cameraFocusCenterY);
 	
     // instantCamFollow();
     // this next code blocks the game from showing out of bounds

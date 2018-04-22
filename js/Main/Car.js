@@ -16,6 +16,10 @@ function carClass() {
 	this.keyHeld_Reverse = false;
 	this.keyHeld_TurnLeft = false;
 	this.keyHeld_TurnRight = false;
+	
+	this.camX = 75;
+	this.camY = 75;
+	this.camDist = 28;
 
 	// this.controlKeyUp;
 	// this.controlKeyRight;
@@ -69,6 +73,10 @@ function carClass() {
 
 		this.x += Math.cos(this.ang) * this.speed;
 		this.y += Math.sin(this.ang) * this.speed;
+		
+		//Cam point leads player around
+		this.camX = this.x + Math.cos(this.ang) * this.camDist * this.speed;
+		this.camY = this.y + Math.sin(this.ang) * this.camDist * this.speed;
 
 		carTrackHandling(this);
 	}
