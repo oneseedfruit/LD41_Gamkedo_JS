@@ -5,6 +5,10 @@ var hippoCarPicTailwag = document.createElement("img");
 var hippoCarPicTailwagLoaded = false;
 var hippoCarPicTailwagSprite;
 
+var fuelMeterPic = document.createElement("img");
+var fuelMeterLoaded = false;
+var fuelMeterSprite;
+
 var particlePic = document.createElement("img");
 
 var trackPics = [];
@@ -40,15 +44,30 @@ function setUpImages() {
 		ticksPerFrame: 10,
 	});
 	hippoCarPicTailwag.onload = function () {
-		hippoCarPicTailwag = true;
+		hippoCarPicTailwagLoaded = true;
 	}
 	hippoCarPicTailwag.src = "images/foodTruck_tailwag.png";
+
+	fuelMeterSprite = sprite({
+		context: canvasContext,
+		width: 648,
+		height: 15,
+		image: fuelMeterPic,
+		loop: false,
+		numberOfFrames: 9,
+		ticksPerFrame: 0,
+	});
+	fuelMeterPic.onload = function () {
+		fuelMeterPicLoaded = true;
+	}
+	fuelMeterPic.src = "images/fuelMeter.png";
 }
 
 function loadImages() {
 	var imageList = [
 	{varName: hippoCarPic, theFile: "foodTruck.png"},
-	{varName:particlePic, theFile: "particle.png"},
+	{varName: particlePic, theFile: "particle.png"},
+
 	{TrackType:TRACK_ROAD, theFile: "track_road.png"},
 	{TrackType:TRACK_WALL, theFile: "track_wall.png"},
 	{TrackType:TRACK_GOAL, theFile: "track_goal.png"},

@@ -23,16 +23,33 @@ function sprite(options) {
             }
         }
     }
+
+  that.setFrameIndex = function(frameIndexUpdate) {
+        frameIndex = frameIndexUpdate;
+  }
+
+  that.getFrameIndex = function() {
+        return frameIndex;
+  }
 	
 	that.reset = function() {
 		tickCount = 0;
 		frameIndex = 0;
 	}
 
-  -that.width
-  -that.height
+  that.render = function(x, y) {
+        that.context.drawImage(that.image,
+                               frameIndex * that.width / numberOfFrames,
+                               0,
+                               that.width / numberOfFrames,
+                               that.height,
+                               x,
+                               y,
+                               that.width / numberOfFrames,
+                               that.height);
+  }
 
-  that.render = function(x, y, withAng) {
+  that.renderHippo = function(x, y, withAng) {
       canvasContext.save();
       canvasContext.translate(x, y);
       canvasContext.rotate(withAng);

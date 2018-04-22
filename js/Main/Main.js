@@ -19,7 +19,6 @@ window.onload = function() {
 }
 
 function imageLoadingDoneSoStartGame() {
-	// Opening cutscene / logos could go here
 	startGame();
 }
 

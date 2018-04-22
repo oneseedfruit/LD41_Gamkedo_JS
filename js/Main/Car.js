@@ -7,6 +7,8 @@ const MIN_SPEED_TO_TURN = 0.5;
 function carClass() {
 	this.x = 75;
 	this.y = 75;
+	this.width = 110;
+	this.height = 96;
 	this.ang = 0;
 	this.speed = 0;
 	this.myCarPic; // which picture to use
@@ -83,7 +85,7 @@ function carClass() {
 
 	this.draw = function() {
 		  //drawBitmapCenteredWithRotation(this.myCarPic, this.x,this.y, this.ang);
-          hippoCarPicTailwagSprite.render(this.x,this.y,this.ang); 
+          hippoCarPicTailwagSprite.renderHippo(this.x,this.y,this.ang); 
           hippoCarPicTailwagSprite.update();
 	}
 }

@@ -17,7 +17,4 @@ function kitchenStuff() {
 
     //laser / net / fire / what?
     colorRect(0, canvas.height/2, canvas.width, 2, "red");
-    /*for (i = 0; i < canvas.width; i += 30) {
-         colorRect(i, canvas.height/2, 20, 2, "red");
-    }*/
 }

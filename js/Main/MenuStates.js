@@ -79,7 +79,7 @@ function setGameStates() {
         drawTracks();
         playerCar.draw();
         canvasContext.restore();
-
+        fuelMeterSprite.render(canvas.width/2 - (fuelMeterSprite.width/9)/2,15);
     }
     if (gameOverState) {
         drawMainMenu();
