@@ -103,7 +103,7 @@ function keyPressed(evt) {
 		case KEY_RIGHT_ARROW:
 			break;
         case KEY_SPACE:
-            pongPressedSpace();
+            switchBetweenDrivingAndCooking();
             break;
         case KEY_P: 
             pongPressedP();

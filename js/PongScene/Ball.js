@@ -6,10 +6,6 @@ function Ball(canvas) {
     this.ballSpeedX = 10;
     this.ballSpeedY = 10;
     
-    this.ballDraw = function() {
-        colorCircle(this.ballX, this.ballY, 10, "white");
-    };
-    
     this.meatDraw = function() {
         colorCircle(this.ballX, this.ballY, 10, "red");
     };
@@ -19,17 +15,19 @@ function Ball(canvas) {
     };
     
     this.ballMove = function() {
-        this.ballX += this.ballSpeedX;
-        this.ballY += this.ballSpeedY;
-        
         if (this.ballY >= canvas.height) {
-            // Player loses food, resets for now
-            this.ballReset();
+            foodInPlay = false;
+            launchPlantMode = false;
+            launchMeatMode = false;
+            return;
         }
 
         if (this.ballY <= 0) {
-            // Food gets to hippogriff, resets for now
-            this.ballReset();
+            launchPlantMode = false;
+            launchMeatMode = false;
+            foodInPlay = false;
+            // Food gets to hippogriff, add to "fuel" level based on quality of food consumed
+            return; 
         }
         
         if (this.ballX <= 0 || this.ballX >= canvas.width) {
@@ -49,6 +47,9 @@ function Ball(canvas) {
             this.ballSpeedY = -this.ballSpeedY;
             this.ballSpeedX = deltaX * 0.35;
         }
+
+        this.ballX += this.ballSpeedX;
+        this.ballY += this.ballSpeedY;
     }
     
     this.ballReset = function() {

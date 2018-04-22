@@ -1,7 +1,7 @@
 var keyHeld_LeftPong = false;
 var keyHeld_RightPong = false;
 
-function pongPressedSpace() {
+function switchBetweenDrivingAndCooking() {
     if (isDrivingMode && !mainMenuState && !helpState) {
         isKitchenMode = true;
         isDrivingMode = false;
@@ -54,8 +54,10 @@ function pongReleaseMeat() {
         launchMeatMode = true;
         launchPlantMode = false;
     }*/ if (isKitchenMode) {
-        launchPlantMode = false;
+        //launchPlantMode = false;
         launchMeatMode = true;
+        foodInPlay = true;
+        // meat supply -1;
         ball.ballReset();
     }
 }
@@ -68,8 +70,10 @@ function pongPressedE() {
         launchPlantMode = true;
         launchMeatMode = false;
     }*/ if (isKitchenMode) {
-        launchMeatMode = false;
+        //launchMeatMode = false;
         launchPlantMode = true;
+        foodInPlay = true;
+        // veggie supply -1;
         ball.ballReset();
     }
 }

@@ -1,3 +1,4 @@
+var foodInPlay = false;
 
 function drawMainMenu() {
     colorRect(0, 0, canvas.width, canvas.height);
@@ -43,13 +44,27 @@ function setGameStates() {
     if (isKitchenMode) {
         kitchenStuff();
         movePaddleAI();
-        if (launchPlantMode) {
-            ball.plantDraw();
-            return;
-        }
-        if (launchMeatMode) {
-            ball.meatDraw();
-            return;
+        if (foodInPlay) {
+            if (launchPlantMode) {
+                ball.plantDraw();
+                return;
+            }
+            if (launchMeatMode) {
+                ball.meatDraw();
+                return;
+            }
+        } else if (!foodInPlay) {
+            if (ball.ballY <= 0) {
+                var stateText = "Hippogriff fed!";
+                var measuredText = canvasContext.measureText(Math.floor(stateText));
+                colorText(stateText,canvas.width/2 - measuredText.width/2 ,canvas.height/1.25,
+                            "white","30px Arial", "center", 1);
+            } else if (ball.ballY >= canvas.height) {
+                var stateText = "Food lost...";
+                var measuredText = canvasContext.measureText(Math.floor(stateText));
+                colorText(stateText,canvas.width/2 - measuredText.width/2 ,canvas.height/1.25,
+                            "white","30px Arial", "center", 1);
+            }
         }
         return;
     }
