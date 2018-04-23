@@ -2,14 +2,17 @@ var audioFormat;
 
 // var boomSound = new SoundOverlapsClass("./audio/boom");
 
-// var trancyMusic = new backgroundMusicClass("./audio/Trancy");
+var DontCookMusic = new backgroundMusicClass("./audio/Don'tCookAndDrive");
+var menuMusic = new backgroundMusicClass("./audio/Mcgamkedomenu");
+var gameOverMusic = new backgroundMusicClass("./audio/McgamkedoPause");
 
 var currentBackgroundMusic;
 
 // var soundVolume = document.getElementById('soundVolume').defaultValue;
 // var musicVolume = document.getElementById('musicVolume').defaultValue;
 
-
+var soundVolume = 1;
+var musicVolume = 1;
 function setFormat() {
     var audio = new Audio();
     if (audio.canPlayType("audio/mp3")) {

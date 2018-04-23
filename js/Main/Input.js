@@ -23,12 +23,6 @@ var mouseHeld = false;
 var mouseCanvasY = 0;
 var mouseCanvasX = 0;
 
-var isKitchenMode = false;
-var isDrivingMode = true;
-
-var mainMenuState = true;
-var helpState = false;
-var gameOverState = false;
 
 function setupInput() {
 	canvas.addEventListener("mousemove", updateMousePos);
@@ -108,6 +102,8 @@ function keyPressed(evt) {
                 isDrivingMode = true;
                 mainMenuState = false;
                 timer.secondsRemaining = 20;
+                loadTrack(levelOne);
+                timer.setupTimer();
             }
             if (helpState) {
                 helpState = false;
@@ -130,6 +126,8 @@ function keyPressed(evt) {
             if (gameOverState) {
                 mainMenuState = true;
                 gameOverState = false;
+                gameOverMusic.pauseSound();
+                menuMusic.loopSong();
             }
 	}
 };

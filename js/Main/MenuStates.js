@@ -1,5 +1,12 @@
 var foodInPlay = false;
 
+var isKitchenMode = false;
+var isDrivingMode = true;
+
+var mainMenuState = true;
+var helpState = false;
+var gameOverState = false;
+
 function drawMainMenu() {
     colorRect(0, 0, canvas.width, canvas.height, "black");
 }
@@ -31,7 +38,10 @@ function showHelpScreenText() {
 function setGameStates() {
      if (mainMenuState) {
         drawMainMenu();
-        showMenuText();
+        showMenuText(); 
+         if(DontCookMusic.isPlaying){
+            DontCookMusic.pauseSound();
+        }       
         return;
     };
     
@@ -70,6 +80,10 @@ function setGameStates() {
     };
     
     if (isDrivingMode) {
+        if(menuMusic.isPlaying){
+            menuMusic.pauseSound();
+        }
+
         canvasContext.save(); // needed to undo this .translate() used for scroll
         // this next line is like subtracting camPanX and camPanY from every
         // canvasContext draw operation up until we call canvasContext.restore
@@ -84,7 +98,7 @@ function setGameStates() {
     }
     if (gameOverState) {
         drawMainMenu();
-        colorText("you lose!\npress enter to go to menu", canvas.width/2, canvas.height/2, "white", "20px Arial", "center", 1);
+        colorText("you lose!\n .Press enter to go to menu", canvas.width/2, canvas.height/2, "white", "20px Arial", "center", 1);
     }
 }
 

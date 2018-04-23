@@ -25,6 +25,11 @@ function TimerClass() {
                 isKitchenMode = false;
                 isDrivingMode = false;
                 gameOverState = true;   
+                 if(DontCookMusic.isPlaying){
+                    DontCookMusic.pauseSound();
+                }
+                    gameOverMusic.loopSong();
+                
             }
         }
     }
