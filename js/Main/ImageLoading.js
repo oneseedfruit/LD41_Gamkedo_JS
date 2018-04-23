@@ -1,4 +1,5 @@
 // still images
+var menuPic = document.createElement("img");
 var hippoCarPic = document.createElement("img");
 var particlePic = document.createElement("img");
 var panPaddle = document.createElement("img");
@@ -87,6 +88,8 @@ function setUpImages() {
 
 function loadImages() {
 	var imageList = [
+	{varName: menuPic, theFile: "menu.png"},
+
 	{varName: hippoCarPic, theFile: "foodTruck.png"},
 	{varName: particlePic, theFile: "particle.png"},
     {varName: panPaddle, theFile: "pan.png"},

@@ -17,9 +17,11 @@ function TimerClass() {
         }
     }
     this.alertMessage = function() {
-        if (this.secondsRemaining == 10) {
-             colorText("I'm hungry!!", canvas.width/2, canvas.height/2, "white", "20px Arial", "center", 1)   
-        }
+            if (!mainMenuState && !gameOverState && !helpState) {
+                 if (this.secondsRemaining == 10) {
+                colorText("I'm hungry!!", canvas.width/2, canvas.height/2, "white", "20px Arial", "center", 1)   
+        }   
+            }
         if (this.secondsRemaining == 0) {
             if (isDrivingMode || isKitchenMode) {
                 isKitchenMode = false;

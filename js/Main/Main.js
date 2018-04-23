@@ -62,5 +62,6 @@ function drawAll() {
     if( isKitchenMode || isDrivingMode ){
 	    timer.drawTimer();
 	    timer.alertMessage();
+	    drawFullnessLevel();
     }
 }

@@ -21,6 +21,13 @@ function Ball(canvas) {
             foodInPlay = false;
             launchPlantMode = false;
             launchMeatMode = false;
+          /*  if (fullnessLevel > 0) {
+               fullnessLevel-= 1;   
+            } else if (fullnessLevel == 0) {
+                isKitchenMode = false;
+                isDrivingMode = false;
+                gameOverState = true;
+            }*/
             return;
         }
 
@@ -30,7 +37,7 @@ function Ball(canvas) {
             foodInPlay = false;
             // Food gets to hippogriff, add to "fuel" level based on quality of food consumed
             return; 
-        }
+        } 
         
         if (this.ballX <= 0 || this.ballX >= canvas.width) {
             this.ballSpeedX *= -1;
