@@ -59,7 +59,7 @@ function drawAll() {
 	//particles.clear();
     setGameStates();
     particles.draw();
-    if (!mainMenuState && !helpState && !creditsState) {
+    if (!mainMenuState && !helpState && !creditsState && !winState) {
     	fuelMeterSprite.render(canvas.width/2 - (fuelMeterSprite.width/9)/2,15);
     }
     /*if( isKitchenMode || isDrivingMode ){
@@ -67,6 +67,9 @@ function drawAll() {
 	    //timer.alertMessage();
 	    //drawFullnessLevel();
     }*/
+     if (!mainMenuState && !gameOverState && !helpState && !creditsState) {
+        colorText("Fuel:", 345, 27, "white", "14px Arial", "center", 1);
+    }
 }
 
 function checkFuelMeter() {

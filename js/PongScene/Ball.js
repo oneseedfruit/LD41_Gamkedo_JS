@@ -29,7 +29,6 @@ function Ball(canvas) {
         }
 
         if (this.ballY <= 0) {
-            
             foodInPlay = false;
 
             if (launchMeatMode) {
@@ -52,6 +51,7 @@ function Ball(canvas) {
             }
             launchPlantMode = false;
             launchMeatMode = false;
+            //screenshake(5);
             return; 
         } 
         
@@ -82,7 +82,7 @@ function Ball(canvas) {
                     launchMeatMode = false;
                     foodInPlay = false;
                     return;
-                } // end of if cookedlevel >= 13
+                } // end of if cookedlevel >= 15
             } // end of if launchMeatMode
             if (launchPlantMode) {
                 if (this.cookedLevel == 4 && !cookedToPerfection) {
@@ -101,7 +101,7 @@ function Ball(canvas) {
                     launchPlantMode = false;
                     foodInPlay = false;
                     return;
-                } // end of if cookedlevel >= 10
+                } // end of if cookedlevel >= 13
             } // end of if launchPlantMode section
         } // end of if ball crosses middle
 
@@ -142,8 +142,11 @@ function Ball(canvas) {
 function DecreaseFrameIndexBasedOnFoodQuality(Quality) {
     var currentFrameIndex = fuelMeterSprite.getFrameIndex();
     currentFrameIndex -= Quality;
+    var currentDistanceTravelled = playerCar.distanceTravelled;
+    playerCar.distanceTravelled = 0;
     if (currentFrameIndex < 0) {
         currentFrameIndex = 0;
+        playerCar.distanceTravelled = currentDistanceTravelled;
     }
     fuelMeterSprite.setFrameIndex(currentFrameIndex);
 };

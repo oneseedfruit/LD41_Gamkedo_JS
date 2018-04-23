@@ -1,5 +1,6 @@
 // still images
 var menuPic = document.createElement("img");
+var winScreenPic = document.createElement("img");
 var kitchenPic = document.createElement("img");
 var hippoCarPic = document.createElement("img");
 var particlePic = document.createElement("img");
@@ -17,6 +18,12 @@ var meatBallSprite;
 
 var vegBallPic = document.createElement("img");
 var vegBallSprite;
+
+var meatAmountPic = document.createElement("img");
+var meatAmountSprite;
+
+var vegAmountPic = document.createElement("img");
+var vegAmountSprite;
 
 var trackPics = [];
 
@@ -85,12 +92,35 @@ function setUpImages() {
 		ticksPerFrame: 0,
 	});
 	vegBallPic.src = "images/pong_vegeball_all.png";
+
+	meatAmountSprite = sprite({
+		context: canvasContext,
+		width: 418,
+		height: 290,
+		image: meatAmountPic,
+		loop: false,
+		numberOfFrames: 11,
+		ticksPerFrame: 0,
+	});
+	meatAmountPic.src = "images/meatAmountBar.png";
+
+	vegAmountSprite = sprite({
+		context: canvasContext,
+		width: 418,
+		height: 290,
+		image: vegAmountPic,
+		loop: false,
+		numberOfFrames: 11,
+		ticksPerFrame: 0,
+	});
+	vegAmountPic.src = "images/vegeAmountBar.png";
 }
 
 function loadImages() {
 	var imageList = [
 	{varName: menuPic, theFile: "menu.png"},
     {varName: kitchenPic, theFile: "kitchenbg.png"},
+    {varName: winScreenPic, theFile: "winScreen.png"},
 
 	{varName: hippoCarPic, theFile: "foodTruck.png"},
 	{varName: particlePic, theFile: "particle.png"},

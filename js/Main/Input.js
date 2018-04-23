@@ -89,6 +89,7 @@ function keyPressed(evt) {
 	switch(evt.keyCode) {
 		case KEY_W:
 		case KEY_UP_ARROW:
+            fuelMeterSprite.setFrameIndex(0); 
 			break;
 		case KEY_A:
 		case KEY_LEFT_ARROW:
