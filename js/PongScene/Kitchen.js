@@ -7,22 +7,14 @@ var ball = new Ball(document.getElementById('gameCanvas'));
 
 function kitchenStuff() {
     //kitchen bg
-    /*colorRect(0, 0, canvas.width, canvas.height, "lightgrey");*/
     canvasContext.drawImage(kitchenPic, 0, 0)
 
     //paddle 1
     colorRect(paddle1X, paddle1Y, PADDLE_THICKNESS, PADDLE_HEIGHT, "white");
-   /* canvasContext.drawImage(panPaddle, paddle1X, paddle1Y, PADDLE_THICKNESS, PADDLE_HEIGHT)*/
 
     //paddle 2
     colorRect(paddle2X, paddle2Y, PADDLE_THICKNESS, PADDLE_HEIGHT, "white");
 
-    //laser / net / fire / what?
-    //colorRect(0, canvas.height/2, canvas.width, 3, "#aa4c53");
+    meatAmountSprite.render(2,20);
+   	vegAmountSprite.render(canvas.width-40,20);
 }
-
-/*function drawFullnessLevel() {
-    if (!mainMenuState && !helpState && !gameOverState) {
-        colorText('Satisfaction: ' + fullnessLevel, 150, 50, 'white', "16px Arial", "center", 1);   
-    }
-}*/

@@ -37,6 +37,8 @@ function setupInput() {
 function gameLevelInitialize(){
     //timer.secondsRemaining = 20;
     loadTrack(levelOne);
+    meatAmountSprite.setFrameIndex(2);
+    vegAmountSprite.setFrameIndex(1);
     //timer.setupTimer();
 }
 
@@ -88,8 +90,7 @@ function keyPressed(evt) {
 	
 	switch(evt.keyCode) {
 		case KEY_W:
-		case KEY_UP_ARROW:
-            fuelMeterSprite.setFrameIndex(0); 
+		case KEY_UP_ARROW: 
 			break;
 		case KEY_A:
 		case KEY_LEFT_ARROW:

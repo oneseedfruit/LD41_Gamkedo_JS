@@ -40,18 +40,26 @@ function switchBetweenDrivingAndCooking() {
 
 function pongReleaseMeat() {
     if (isKitchenMode && !foodInPlay) {
+        var currentFrameIndex = meatAmountSprite.getFrameIndex();
+        if (currentFrameIndex == 0) {
+            return;
+        }
         launchMeatMode = true;
         foodInPlay = true;
-        // meat supply -1;
+        meatAmountSprite.setFrameIndex(currentFrameIndex - 1);
         ball.ballReset();
     }
 }
 
 function pongReleaseVeg() {
     if (isKitchenMode && !foodInPlay) {
+        var currentFrameIndex = vegAmountSprite.getFrameIndex();
+        if (currentFrameIndex == 0) {
+            return;
+        }
         launchPlantMode = true;
         foodInPlay = true;
-        // veggie supply -1;
+        vegAmountSprite.setFrameIndex(currentFrameIndex - 1);
         ball.ballReset();
     }
 }

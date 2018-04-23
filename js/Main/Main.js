@@ -41,9 +41,8 @@ function updateAll() {
 	particles.update();
 	updateScreenshake();
 	if(!gameOverState){
-			checkFuelMeter();
+		checkFuelMeter();
 	}
-
 }
 
 function moveAll() {
