@@ -13,7 +13,7 @@ var levelOne = [ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
 				 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1,
 				 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1,
 				 1, 1, 1, 1, 0, 4, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1,
-				 1, 1, 1, 1, 0, 4, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1,
+				 1, 1, 1, 1, 0, 4, 3, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1,
 				 1, 1, 1, 1, 0, 4, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1,
 				 1, 1, 1, 1, 0, 4, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1,
 				 1, 1, 1, 1, 5, 4, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1,
@@ -27,6 +27,23 @@ const TRACK_GOAL = 3;
 const TRACK_DIRT = 4;
 const TRACK_BOULDER = 5;
 const TRACK_OBELISK = 6;
+
+const passableTiles =	[
+	TRACK_ROAD,
+	TRACK_DIRT,
+	TRACK_GOAL
+];
+
+
+function trackTypeIsPassable(checkTrackType)
+{
+	for (var i = 0; i < passableTiles.length; i++) {
+		if(checkTrackType == passableTiles[i]) {
+			return true;
+		}
+	} // check each passable tile
+	return false;
+} // end trackTypeIsPassable
 
 function returnTileTypeAtColRow(col, row) {
 	if(col >= 0 && col < TRACK_COLS &&
@@ -84,10 +101,15 @@ function carTrackHandling(whichCar) {
 		carTrackRow >= 0 && carTrackRow < TRACK_ROWS) {
 		var tileHere = returnTileTypeAtColRow( carTrackCol,carTrackRow );
 
-		if(tileHere == TRACK_GOAL) {
-			console.log(whichCar.name + " WINS!");
-			loadTrack(levelOne);
-		} else if(tileHere != TRACK_ROAD) {
+		if(trackTypeIsPassable(tileHere)){
+			if(tileHere == TRACK_GOAL) {
+				console.log(whichCar.name + " WINS!");
+				loadTrack(levelOne);
+			} 
+			whichCar.friction = getFrictionForTileType(tileHere);
+		}
+
+		else{
 			// next two lines added to fix a bug, mentioned in video 9.6
 			// undoes the car movement which got it onto the wall
 			whichCar.x -= Math.cos(whichCar.ang) * whichCar.speed;
@@ -97,3 +119,13 @@ function carTrackHandling(whichCar) {
 		} // end of track found
 	} // end of valid col and row
 } // end of carTrackHandling func
+
+
+function getFrictionForTileType(tileKindHere) {
+	switch(tileKindHere) {
+		case TRACK_DIRT:
+			return TRACK_FRICTION_DIRT;
+		default:
+			return TRACK_FRICTION_NORMAL;
+	}
+}

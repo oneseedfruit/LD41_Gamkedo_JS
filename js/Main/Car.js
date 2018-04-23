@@ -1,8 +1,12 @@
-const GROUNDSPEED_DECAY_MULT = 0.95;
+
 const DRIVE_POWER = 0.5;
 const REVERSE_POWER = 0.2;
 const TURN_RATE = 0.09;
 const MIN_SPEED_TO_TURN = 0.5;
+
+const TRACK_FRICTION_DIRT = 0.93;
+const TRACK_FRICTION_NORMAL = 0.95;
+
 
 function carClass() {
 	this.x = 75;
@@ -23,6 +27,7 @@ function carClass() {
 	this.camX = 75;
 	this.camY = 75;
 	this.camDist = 28;
+	this.friction = 1;
 
 	// this.controlKeyUp;
 	// this.controlKeyRight;
@@ -57,7 +62,7 @@ function carClass() {
 	} // end of carReset func
 
 	this.move = function() {
-		this.speed *= GROUNDSPEED_DECAY_MULT;
+		this.speed *= this.friction;
 
 		if(this.keyHeld_Gas) {
 			this.speed += DRIVE_POWER;
