@@ -8,14 +8,15 @@ var helpState = false;
 var gameOverState = false;
 
 function drawMainMenu() {
-    colorRect(0, 0, canvas.width, canvas.height, "black");
+    // colorRect(0, 0, canvas.width, canvas.height, "black");
+    canvasContext.drawImage(menuPic, 0, 0);
 }
 
-function showMenuText() {
-    colorText("Death Road To McGamkedonalds", canvas.width/2, 200, "white", "30px Arial", "center", 1);
-    colorText("[P]lay", canvas.width/2, 300, "white", "20px Arial", "center", 1);
-    colorText("[H]elp", canvas.width/2, 350, "white", "20px Arial", "center", 1);
-}
+// function showMenuText() {
+//     colorText("Death Road To McGamkedonalds", canvas.width/2, 200, "white", "30px Arial", "center", 1);
+//     colorText("[P]lay", canvas.width/2, 300, "white", "20px Arial", "center", 1);
+//     colorText("[H]elp", canvas.width/2, 350, "white", "20px Arial", "center", 1);
+// }
 
 function drawHelpScreen() {
      colorRect(0, 0, canvas.width, canvas.height);
@@ -38,7 +39,7 @@ function showHelpScreenText() {
 function setGameStates() {
      if (mainMenuState) {
         drawMainMenu();
-        showMenuText(); 
+        // showMenuText(); 
          if(DontCookMusic.isPlaying){
             DontCookMusic.pauseSound();
         }       
