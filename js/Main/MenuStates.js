@@ -42,9 +42,9 @@ function showCreditsText() {
     colorText("Charleen Andrew: Truck game art, Food art ", 150, 150, "white", "16px Arial", "left", 1);
     colorText("Randy Tan: ", 150, 180, "white", "16px Arial", "left", 1);
     colorText("Vignesh Ramesh: Car movement, Menu and Game over music, Camera follow", 150, 210, "white", "16px Arial", "left", 1);
-    colorText("Harleen Dualan: Pong/ Kitchen Scenne, Game art", 150, 240, "white", "16px Arial", "left", 1);
+    colorText("Herleen Dualan: Pong/Kitchen Scene, pong AI, Game art", 150, 240, "white", "16px Arial", "left", 1);
     colorText("Nick: Frame rate optimizaiton", 150, 270, "white", "16px Arial", "left", 1);
-    colorText("Terrence McDonnell: Track code, main game code, Food Counter", 150, 300, "white", "16px Arial", "left", 1);
+    colorText("Terrence McDonnell: Track code, pong code, main game code, Food Counter", 150, 300, "white", "16px Arial", "left", 1);
     colorText("Simon Hoffiz: Level Design & Level Art", 150, 330, "white", "16px Arial", "left", 1);
     colorText("Asix Jin: Main game music", 150, 360, "white", "16px Arial", "left", 1);
     colorText("Cameron button: Refrigerator idea", 150, 390, "white", "16px Arial", "left", 1);
@@ -115,10 +115,11 @@ function setGameStates() {
         return;
     }
     if (gameOverState) {        
-        canvasContext.drawImage(loseScreenPic, 0, 0);
-        colorText("YOU", 65, 200, "white", "50px Arial", "left", 1);
-        colorText("LOSE", 50, 300, "#831a1a", "70px Arial", "left", 1);
-        colorText("Press [ ENTER ] to Return To Menu", 10, 370, "white", "18px Arial", "left", 1);
+        //canvasContext.drawImage(loseScreenPic, 0, 0);
+        drawScreenBlack();
+        colorText("YOU", canvas.width/2, 240, "white", "50px Arial", "center", 1);
+        colorText("LOSE", canvas.width/2, 300, "#831a1a", "70px Arial", "center", 1);
+        colorText("Press [ ENTER ] to Return To Menu", canvas.width/2, 425, "white", "18px Arial", "center", 1);
         
     }
     if (winState) {
