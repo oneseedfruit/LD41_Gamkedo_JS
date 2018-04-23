@@ -1,6 +1,9 @@
+// still images
 var hippoCarPic = document.createElement("img");
 var particlePic = document.createElement("img");
+var panPaddle = document.createElement("img");
 
+//sprites
 var hippoCarPicTailwag = document.createElement("img");
 var hippoCarPicTailwagSprite;
 
@@ -85,6 +88,7 @@ function loadImages() {
 	var imageList = [
 	{varName: hippoCarPic, theFile: "foodTruck.png"},
 	{varName: particlePic, theFile: "particle.png"},
+    {varName: panPaddle, theFile: "pan.png"},
 
 	{TrackType:TRACK_ROAD, theFile: "track_road.png"},
 	{TrackType:TRACK_WALL, theFile: "track_wall.png"},
