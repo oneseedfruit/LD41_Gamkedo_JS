@@ -119,11 +119,11 @@ function setGameStates() {
         return;
     }
     if (gameOverState) {
-        colorRect(0, 0, canvas.width, canvas.height, "black");
-        colorText("you lose!\n .Press enter to go to menu", canvas.width/2, canvas.height/2, "white", "20px Arial", "center", 1);
+        drawHelpScreen();
+        colorText("You lose!\n .Press [Enter] to go to menu", canvas.width/2, canvas.height/2, "white", "20px Arial", "center", 1);
     }
     if (creditsState) {
-        drawMainMenu();
+        drawHelpScreen();
         showCreditsText();
     }
 }
