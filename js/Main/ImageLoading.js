@@ -11,6 +11,8 @@ var fuelMeterSprite;
 
 var particlePic = document.createElement("img");
 
+var rawPlantPongBall = document.createElement("img");
+
 var trackPics = [];
 
 var picsToLoad = 0; // set automatically based on imageList in loadImages()
@@ -62,6 +64,7 @@ function loadImages() {
 	{varName: hippoCarPic, theFile: "foodTruck.png"},
 	{varName: particlePic, theFile: "particle.png"},
 	//{varName: particlePic, theFile: "particle.png"},
+    {varName: rawPlantPongBall, theFile: "vege_pongballRaw.png"},
 
 	{TrackType:TRACK_ROAD, theFile: "track_road.png"},
 	{TrackType:TRACK_WALL, theFile: "track_wall.png"},

@@ -7,6 +7,7 @@ function Ball(canvas) {
     this.ballSpeedY = 10;
 
     this.cookedLevel = 0;
+
     
     this.meatDraw = function() {
         colorCircle(this.ballX, this.ballY, 10, "red");
@@ -14,8 +15,8 @@ function Ball(canvas) {
     };
     
     this.plantDraw = function() {
-        colorCircle(this.ballX, this.ballY, 10, "green");
-        //canvasContext.drawImage();
+        //colorCircle(this.ballX, this.ballY, 10, "green");
+        drawBitmapCenteredWithRotation(rawPlantPongBall, this.ballX,this.ballY);
     };
     
     this.ballMove = function() {
@@ -59,7 +60,7 @@ function Ball(canvas) {
         }
 
         this.ballX += this.ballSpeedX;
-        this.ballY += this.ballSpeedY;
+        this.ballY += this.ballSpeedY; 
     }
     
     this.ballReset = function() {
