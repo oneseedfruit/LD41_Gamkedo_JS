@@ -33,7 +33,9 @@ const TRACK_DIRT_MEAT = 8;
 const passableTiles =	[
 	TRACK_ROAD,
 	TRACK_DIRT,
-	TRACK_GOAL
+	TRACK_GOAL,
+	TRACK_DIRT_VEGE,
+	TRACK_DIRT_MEAT
 ];
 
 
@@ -109,6 +111,15 @@ function carTrackHandling(whichCar) {
 				isDrivingMode = false;
 				isKitchenMode = false;
 			} 
+			
+
+			if(tileHere == TRACK_DIRT_MEAT) {
+				trackGrid[trackIndexUnderCar] = TRACK_DIRT;
+			} 
+
+			if(tileHere == TRACK_DIRT_VEGE) {
+				trackGrid[trackIndexUnderCar] = TRACK_DIRT;
+			} 
 			whichCar.friction = getFrictionForTileType(tileHere);
 		}
 
@@ -128,6 +139,8 @@ function carTrackHandling(whichCar) {
 function getFrictionForTileType(tileKindHere) {
 	switch(tileKindHere) {
 		case TRACK_DIRT:
+		case TRACK_DIRT_MEAT:
+		case TRACK_DIRT_VEGE:
 			return TRACK_FRICTION_DIRT;
 		default:
 			return TRACK_FRICTION_NORMAL;
