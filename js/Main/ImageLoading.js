@@ -1,18 +1,17 @@
 var hippoCarPic = document.createElement("img");
-var hippoCarPicLoaded = false;
+var particlePic = document.createElement("img");
 
 var hippoCarPicTailwag = document.createElement("img");
-var hippoCarPicTailwagLoaded = false;
 var hippoCarPicTailwagSprite;
 
 var fuelMeterPic = document.createElement("img");
-var fuelMeterLoaded = false;
 var fuelMeterSprite;
 
-var particlePic = document.createElement("img");
+var meatBallPic = document.createElement("img");
+var meatBallSprite;
 
-var rawPlantPongBall = document.createElement("img");
-var rawMeatPongBall = document.createElement("img");
+var vegBallPic = document.createElement("img");
+var vegBallSprite;
 
 var trackPics = [];
 
@@ -58,15 +57,34 @@ function setUpImages() {
 		ticksPerFrame: 0,
 	});
 	fuelMeterPic.src = "images/fuelMeter.png";
+
+	meatBallSprite = sprite({
+		context: canvasContext,
+		width: 96,
+		height: 32,
+		image: meatBallPic,
+		loop: false,
+		numberOfFrames: 3,
+		ticksPerFrame: 0,
+	});
+	meatBallPic.src = "images/pong_meatball_all.png";
+
+	vegBallSprite = sprite({
+		context: canvasContext,
+		width: 96,
+		height: 32,
+		image: vegBallPic,
+		loop: false,
+		numberOfFrames: 3,
+		ticksPerFrame: 0,
+	});
+	vegBallPic.src = "images/pong_vegeball_all.png";
 }
 
 function loadImages() {
 	var imageList = [
 	{varName: hippoCarPic, theFile: "foodTruck.png"},
 	{varName: particlePic, theFile: "particle.png"},
-	//{varName: particlePic, theFile: "particle.png"},
-    {varName: rawPlantPongBall, theFile: "vege_pongballRaw.png"},
-    {varName: rawMeatPongBall, theFile: "meat_pongballRaw.png"},
 
 	{TrackType:TRACK_ROAD, theFile: "track_road.png"},
 	{TrackType:TRACK_WALL, theFile: "track_wall.png"},

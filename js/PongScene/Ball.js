@@ -7,17 +7,13 @@ function Ball(canvas) {
     this.ballSpeedY = 10;
 
     this.cookedLevel = 0;
-
     
     this.meatDraw = function() {
-        //colorCircle(this.ballX, this.ballY, 10, "red");
-        drawBitmapCenteredWithRotation(rawMeatPongBall, this.ballX,this.ballY);
-
+        meatBallSprite.render(this.ballX - ((meatBallSprite.width/3)/2), this.ballY - meatBallSprite.height/2);
     };
     
     this.plantDraw = function() {
-        //colorCircle(this.ballX, this.ballY, 10, "green");
-        drawBitmapCenteredWithRotation(rawPlantPongBall, this.ballX,this.ballY);
+        vegBallSprite.render(this.ballX - ((vegBallSprite.width/3)/2), this.ballY - vegBallSprite.height/2);
     };
     
     this.ballMove = function() {
@@ -44,7 +40,18 @@ function Ball(canvas) {
             this.ballY > canvas.height/2 - cookingThickness/2) {
             smokeScreenEffect(this.ballX, this.ballY);
             this.cookedLevel++;
-        }
+            var cookedToPerfection = false;
+            var burntToACrisp = false;
+            if (this.cookedLevel == 3 && !cookedToPerfection) {
+                if (launchMeatMode) {
+                    var currentFrameIndex = meatBallSprite.getFrameIndex();
+                    currentFrameIndex++;
+                    meatBallSprite.setFrameIndex(currentFrameIndex);
+                    cookedToPerfection = true;
+            //if (this.cookedLevel < 7 && !burntToACrisp)
+                } // end of if launchMeatMode
+            } // end of cookedLevel < 3;
+        } // end of is ball at the middle?
 
         if (this.ballY > paddle1Y && this.ballY < (paddle1Y + PADDLE_HEIGHT) 
         && this.ballX > paddle1X && this.ballX < paddle1X + PADDLE_THICKNESS) {
@@ -61,7 +68,7 @@ function Ball(canvas) {
         }
 
         this.ballX += this.ballSpeedX;
-        this.ballY += this.ballSpeedY; 
+        this.ballY += this.ballSpeedY;
     }
     
     this.ballReset = function() {
@@ -69,5 +76,9 @@ function Ball(canvas) {
         this.ballY = 100;
         this.ballSpeedX = 8;
         this.ballSpeedY = 8;
+        this.cookedLevel = 0;
+        meatBallSprite.reset();
+        vegBallSprite.reset();
+        cookedToPerfection = false;
     }
 }
