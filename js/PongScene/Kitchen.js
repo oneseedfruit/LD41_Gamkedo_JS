@@ -7,13 +7,12 @@ var ball = new Ball(document.getElementById('gameCanvas'));
 
 function kitchenStuff() {
     //kitchen bg
-    colorRect(0, 0, canvas.width, canvas.height, "lightgrey");
-
-    fuelMeterSprite.render(canvas.width/2 - (fuelMeterSprite.width/9)/2,15);
+    /*colorRect(0, 0, canvas.width, canvas.height, "lightgrey");*/
+    canvasContext.drawImage(kitchenPic, 0, 0)
 
     //paddle 1
-    //colorRect(paddle1X, paddle1Y, PADDLE_THICKNESS, PADDLE_HEIGHT, "white");
-    canvasContext.drawImage(panPaddle, paddle1X, paddle1Y, PADDLE_THICKNESS, PADDLE_HEIGHT)
+    colorRect(paddle1X, paddle1Y, PADDLE_THICKNESS, PADDLE_HEIGHT, "white");
+   /* canvasContext.drawImage(panPaddle, paddle1X, paddle1Y, PADDLE_THICKNESS, PADDLE_HEIGHT)*/
 
     //paddle 2
     colorRect(paddle2X, paddle2Y, PADDLE_THICKNESS, PADDLE_HEIGHT, "white");

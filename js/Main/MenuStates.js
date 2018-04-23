@@ -9,10 +9,8 @@ var gameOverState = false;
 var creditsState = false;
 
 function drawMainMenu() {
-    // colorRect(0, 0, canvas.width, canvas.height, "black");
     canvasContext.drawImage(menuPic, 0, 0);
 }
-
 
 // function showMenuText() {
 //     colorText("Death Road To McGamkedonalds", canvas.width/2, 200, "white", "30px Arial", "center", 1);
@@ -21,10 +19,8 @@ function drawMainMenu() {
 //     colorText("[C]redits", canvas.width/2, 400, "white", "20px Arial", "center", 1);
 // }
 
-
-
-function drawHelpScreen() {
-     colorRect(0, 0, canvas.width, canvas.height);
+function drawScreenBlack() {
+     colorRect(0, 0, canvas.width, canvas.height, "black");
 }
 
 function showHelpScreenText() {
@@ -67,7 +63,7 @@ function setGameStates() {
     };
     
     if (helpState) {
-        drawHelpScreen();
+        drawScreenBlack();
         showHelpScreenText();
         return;
     };
@@ -92,7 +88,6 @@ function setGameStates() {
                 var measuredText = canvasContext.measureText(Math.floor(stateText));
                 colorText(stateText,canvas.width/2 - measuredText.width/2 ,canvas.height/1.25,
                             "black","30px Arial", "center", 1);
-                fullnessLevel++;
             } else if (ball.ballY >= canvas.height) {
                 var stateText = "Food lost...";
                 var measuredText = canvasContext.measureText(Math.floor(stateText));
@@ -117,15 +112,16 @@ function setGameStates() {
         drawTracks();
         playerCar.draw();
         canvasContext.restore();
-        fuelMeterSprite.render(canvas.width/2 - (fuelMeterSprite.width/9)/2,15);
         return;
     }
     if (gameOverState) {
-        drawHelpScreen();
+        DontCookMusic.pauseSound();
+        gameOverMusic.loopSong();
+        colorRect(0,0, canvas.width,canvas.height, "red");
         colorText("You lose!\n .Press [Enter] to go to menu", canvas.width/2, canvas.height/2, "white", "20px Arial", "center", 1);
     }
     if (creditsState) {
-        drawHelpScreen();
+        drawScreenBlack();
         showCreditsText();
     }
 }
