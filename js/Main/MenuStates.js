@@ -20,7 +20,7 @@ function drawMainMenu() {
 // }
 
 function drawScreenBlack() {
-     colorRect(0, 0, canvas.width, canvas.height);
+     colorRect(0, 0, canvas.width, canvas.height, "black");
 }
 
 function showHelpScreenText() {
@@ -115,7 +115,9 @@ function setGameStates() {
         return;
     }
     if (gameOverState) {
-        drawScreenBlack();
+        DontCookMusic.pauseSound();
+        gameOverMusic.loopSong();
+        colorRect(0,0, canvas.width,canvas.height, "red");
         colorText("You lose!\n .Press [Enter] to go to menu", canvas.width/2, canvas.height/2, "white", "20px Arial", "center", 1);
     }
     if (creditsState) {

@@ -11,7 +11,7 @@ const FRAMES_PER_SECOND = 30;
 window.onload = function() {
 	canvas = document.getElementById('gameCanvas');
 	canvasContext = canvas.getContext('2d');
-	colorRect(0,0, canvas.width,canvas.height, 'black');
+	drawScreenBlack();
 	var loadingText = "LOADING IMAGES";
 	var textWidth = canvasContext.measureText(Math.floor(loadingText));
 	colorText(loadingText, canvas.width/2 - textWidth.width * 2, canvas.height/2, 'white');
@@ -42,12 +42,6 @@ function updateAll() {
 	checkFuelMeter();
 }
 
-function resetGame() {
-	playerCar.x = 75;
-	playerCar.y = 75;
-	fuelMeterSprite.reset();
-}
-
 function moveAll() {
 	if (isKitchenMode || (launchMeatMode || launchPlantMode)) {
 		pongPaddleMove();
@@ -61,7 +55,7 @@ function drawAll() {
 	//particles.clear();
     setGameStates();
     particles.draw();
-    if (!mainMenuState) {
+    if (!mainMenuState && !helpState && !creditsState) {
     	fuelMeterSprite.render(canvas.width/2 - (fuelMeterSprite.width/9)/2,15);
     }
     /*if( isKitchenMode || isDrivingMode ){

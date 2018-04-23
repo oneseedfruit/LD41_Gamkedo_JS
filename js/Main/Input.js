@@ -142,10 +142,6 @@ function keyPressed(evt) {
         case KEY_ENTER:
             if (gameOverState) {
                 resetGame();
-                mainMenuState = true;
-                gameOverState = false;
-                gameOverMusic.pauseSound();
-                menuMusic.loopSong();
             }
 	}
 };
