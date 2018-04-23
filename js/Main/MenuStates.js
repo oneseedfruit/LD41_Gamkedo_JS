@@ -13,15 +13,12 @@ function drawMainMenu() {
     canvasContext.drawImage(menuPic, 0, 0);
 }
 
-
 // function showMenuText() {
 //     colorText("Death Road To McGamkedonalds", canvas.width/2, 200, "white", "30px Arial", "center", 1);
 //     colorText("[P]lay", canvas.width/2, 300, "white", "20px Arial", "center", 1);
 //     colorText("[H]elp", canvas.width/2, 350, "white", "20px Arial", "center", 1);
 //     colorText("[C]redits", canvas.width/2, 400, "white", "20px Arial", "center", 1);
 // }
-
-
 
 function drawHelpScreen() {
      colorRect(0, 0, canvas.width, canvas.height);
@@ -92,7 +89,6 @@ function setGameStates() {
                 var measuredText = canvasContext.measureText(Math.floor(stateText));
                 colorText(stateText,canvas.width/2 - measuredText.width/2 ,canvas.height/1.25,
                             "black","30px Arial", "center", 1);
-                fullnessLevel++;
             } else if (ball.ballY >= canvas.height) {
                 var stateText = "Food lost...";
                 var measuredText = canvasContext.measureText(Math.floor(stateText));
