@@ -40,8 +40,9 @@ function updateAll() {
 	drawAll();
 	particles.update();
 	updateScreenshake();
-
-	checkFuelMeter();
+	if(!gameOverState){
+			checkFuelMeter();
+	}
 
 }
 
@@ -76,5 +77,9 @@ function checkFuelMeter() {
         isDrivingMode = false;
         foodInPlay = false;
 		gameOverState = true;
+		if(!gameOverMusic.loop){
+        	DontCookMusic.pauseSound();
+       		gameOverMusic.loopSong();
+        }
+      }
 	} 
-}

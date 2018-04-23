@@ -31,15 +31,7 @@ function Ball(canvas) {
         if (this.ballY <= 0) {
             
             foodInPlay = false;
-<<<<<<< HEAD
-            // screenshake(2);
-            if (this.cookedLevel <= 2) {
-                DecreaseFrameIndexBasedOnFoodQuality(2);
-            } else if (this.cookedLevel <= 6) {
-                DecreaseFrameIndexBasedOnFoodQuality(6);
-            } else if (this.cookedLevel >= 7) {
-                DecreaseFrameIndexBasedOnFoodQuality(1);
-=======
+
             if (launchMeatMode) {
                 if (this.cookedLevel <= 2) {
                     DecreaseFrameIndexBasedOnFoodQuality(2);
@@ -57,7 +49,6 @@ function Ball(canvas) {
                 } else if (this.cookedLevel >= 7) {
                     DecreaseFrameIndexBasedOnFoodQuality(-1);
                 }
->>>>>>> 0ecfa47c53d8e697916f953c97b870b71c40bc27
             }
             launchPlantMode = false;
             launchMeatMode = false;

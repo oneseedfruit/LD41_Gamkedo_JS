@@ -35,12 +35,7 @@ function TimerClass() {
                 gameOverState = true;   
                 clearInterval(countdownTimer);
                 timer.isRunning = false;
-                 if(DontCookMusic.isPlaying){
-                    DontCookMusic.pauseSound();
-                }
-                    gameOverMusic.loopSong();
                 
-            }
         }
     }
 }
