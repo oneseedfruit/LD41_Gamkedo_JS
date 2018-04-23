@@ -2,7 +2,7 @@ var canvas, canvasContext;
 var paused = false;
 
 var playerCar = new carClass();
-var timer = new TimerClass();
+//var timer = new TimerClass();
 
 var levelLoaded = false;
 
@@ -47,17 +47,16 @@ function moveAll() {
 	} else {
 		playerCar.move();
 	}
-	updateGameStates();
 	cameraFollow();
 }
 
 function drawAll() {
-	particles.clear();
+	//particles.clear();
     setGameStates();
     particles.draw();
     if( isKitchenMode || isDrivingMode ){
-	    timer.drawTimer();
-	    timer.alertMessage();
-	    drawFullnessLevel();
+	    //timer.drawTimer();
+	    //timer.alertMessage();
+	    //drawFullnessLevel();
     }
 }

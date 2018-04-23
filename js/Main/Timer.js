@@ -1,13 +1,20 @@
+<<<<<<< HEAD
+var countdownTimer;
 function TimerClass() {
+=======
+/*function TimerClass() {
+>>>>>>> b29631b9e88aed98507f6489c5a484c27a8aac55
     this.secondsRemaining = 20;
+    this.isRunning = false;
     this.timeTick = function () {
         this.secondsRemaining--;
     }
 
     this.setupTimer = function () {
         var t = this;
+        this.isRunning = true;
         if (isDrivingMode || isKitchenMode) {
-              setInterval(function() {t.timeTick();}, 1000);   
+              countdownTimer = setInterval(function() {t.timeTick();}, 1000);   
         }
     }
 
@@ -27,6 +34,8 @@ function TimerClass() {
                 isKitchenMode = false;
                 isDrivingMode = false;
                 gameOverState = true;   
+                clearInterval(countdownTimer);
+                timer.isRunning = false;
                  if(DontCookMusic.isPlaying){
                     DontCookMusic.pauseSound();
                 }
@@ -36,3 +45,4 @@ function TimerClass() {
         }
     }
 }
+*/
