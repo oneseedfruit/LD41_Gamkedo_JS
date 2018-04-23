@@ -30,8 +30,6 @@ function showHelpScreenText() {
     colorText("Vehicle Mode:", 150, 150, "white", "20px Arial", "left", 1);
     colorText("Movement: W, A, S, D", 150, 180, "white", "16px Arial", "left", 1);
     colorText("Switch to Kitchen: SPACE, then in Kitchen Mode stop and wait for Q or E to be pressed", 150, 210, "white", "16px Arial", "left", 1);
-    colorText("Switch to Kitchen and Launch Meat: Q", 150, 240, "white", "16px Arial", "left", 1);
-    colorText("Switch to Kitchen and Launch Plant: E", 150, 270, "white", "16px Arial", "left", 1);
     colorText("Gather Ingredient: SPACE", 150, 300, "white", "16px Arial", "left", 1);
     colorText("Kitchen Mode:", 150, 350, "white", "20px Arial", "left", 1);
     colorText("Movement: A, D", 150, 380, "white", "16px Arial", "left", 1);
