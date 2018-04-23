@@ -132,8 +132,8 @@ function loadImages() {
 	{TrackType: TRACK_DIRT, theFile: "Level_Tile_Dirt.png"},
 	{TrackType: TRACK_BOULDER, theFile: "Level_Tile_Boulder.png"},
 	{TrackType: TRACK_OBELISK, theFile: "Level_Tile_Obelisk.png"},
-	{TrackType: TRACK_DIRT_VEGE, theFile: "Level_Tile_Dirt_Vege.gif"},
-	{TrackType: TRACK_DIRT_MEAT, theFile: "Level_Tile_Dirt_Meat.gif"},
+	{TrackType: TRACK_DIRT_VEGE, theFile: "Level_Tile_Dirt_Vege2.png"},
+	{TrackType: TRACK_DIRT_MEAT, theFile: "Level_Tile_Dirt_Meat2.png"},
 	];
 
 	picsToLoad = imageList.length;

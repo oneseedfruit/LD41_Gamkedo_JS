@@ -38,6 +38,7 @@ const passableTiles =	[
 	TRACK_DIRT_MEAT
 ];
 
+var animTileOscillatorFrame = 0;
 
 function trackTypeIsPassable(checkTrackType)
 {
@@ -64,7 +65,7 @@ function rowColToArrayIndex(col, row) {
 }
 
 function drawTracks() {
-
+    animTileOscillatorFrame++;
 	var arrayIndex = 0;
 	var drawTileX = 0;
 	var drawTileY = 0;
@@ -75,8 +76,16 @@ function drawTracks() {
 			if (tileVisible(drawTileX,drawTileY)) {
 				if (!useImg)
 					console.log("Missing trackPics[" + tileKindHere + "] in drawTracks!");
-				else
-					canvasContext.drawImage(useImg,drawTileX,drawTileY);
+				else{
+					if(tileKindHere == TRACK_DIRT_MEAT || tileKindHere == TRACK_DIRT_VEGE ){
+						    canvasContext.drawImage(trackPics[TRACK_DIRT],drawTileX,drawTileY);
+							canvasContext.drawImage(useImg, (Math.floor(animTileOscillatorFrame* 0.70)%5)*TRACK_W,0,TRACK_W,TRACK_H, drawTileX,drawTileY,TRACK_W,TRACK_H);
+						}
+					else{
+							canvasContext.drawImage(useImg,drawTileX,drawTileY);
+
+					}
+				}
 			}
 			drawTileX += TRACK_W;	
 			arrayIndex++;
