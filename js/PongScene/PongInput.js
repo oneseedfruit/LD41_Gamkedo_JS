@@ -2,23 +2,33 @@ var keyHeld_LeftPong = false;
 var keyHeld_RightPong = false;
 
 function switchBetweenDrivingAndCooking() {
+
+    //kitchen mode code
     if (isDrivingMode && !mainMenuState && !helpState) {
         isKitchenMode = true;
         isDrivingMode = false;
+        console.log("kitchen mode");
+        clearInterval(countdownTimer);
+       
     }
+
+    //drive mode code
      else if (isKitchenMode) {
         isDrivingMode = true;
         isKitchenMode = false;
         launchPlantMode = false;
         launchMeatMode = false;
         foodInPlay = false;
+         if(timer.isRunning){p
+            timer.setupTimer();
+        }
+
     }
-    if (helpState) {
+
+    //main menu
+    if (helpState || creditsState) {
         mainMenuState = true;
         helpState = false;
-    }
-    if (creditsState) {
-        mainMenuState = true;
         creditsState = false;
     }
 
