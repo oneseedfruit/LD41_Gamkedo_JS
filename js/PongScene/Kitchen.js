@@ -7,7 +7,8 @@ var ball = new Ball(document.getElementById('gameCanvas'));
 
 function kitchenStuff() {
     //kitchen bg
-    colorRect(0, 0, canvas.width, canvas.height, "lightgrey");
+    /*colorRect(0, 0, canvas.width, canvas.height, "lightgrey");*/
+    canvasContext.drawImage(kitchenPic, 0, 0)
 
     fuelMeterSprite.render(canvas.width/2 - (fuelMeterSprite.width/9)/2,15);
 
