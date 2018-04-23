@@ -13,6 +13,7 @@ var particlePic = document.createElement("img");
 
 var rawPlantPongBall = document.createElement("img");
 var rawMeatPongBall = document.createElement("img");
+var panPaddle = document.createElement("img");
 
 var trackPics = [];
 
@@ -67,6 +68,7 @@ function loadImages() {
 	//{varName: particlePic, theFile: "particle.png"},
     {varName: rawPlantPongBall, theFile: "vege_pongballRaw.png"},
     {varName: rawMeatPongBall, theFile: "meat_pongballRaw.png"},
+    {varName: panPaddle, theFile: "pan.png"},
 
 	{TrackType:TRACK_ROAD, theFile: "track_road.png"},
 	{TrackType:TRACK_WALL, theFile: "track_wall.png"},

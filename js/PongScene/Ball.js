@@ -11,13 +11,13 @@ function Ball(canvas) {
     
     this.meatDraw = function() {
         //colorCircle(this.ballX, this.ballY, 10, "red");
-        drawBitmapCenteredWithRotation(rawMeatPongBall, this.ballX,this.ballY);
+        canvasContext.drawImage(rawMeatPongBall, this.ballX,this.ballY);
 
     };
     
     this.plantDraw = function() {
         //colorCircle(this.ballX, this.ballY, 10, "green");
-        drawBitmapCenteredWithRotation(rawPlantPongBall, this.ballX,this.ballY);
+        canvasContext.drawImage(rawPlantPongBall, this.ballX,this.ballY);
     };
     
     this.ballMove = function() {
