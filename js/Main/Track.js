@@ -121,13 +121,23 @@ function carTrackHandling(whichCar) {
 				isKitchenMode = false;
 			} 
 			
-
 			if(tileHere == TRACK_DIRT_MEAT) {
 				trackGrid[trackIndexUnderCar] = TRACK_DIRT;
+				var currentFrameIndex = meatAmountSprite.getFrameIndex();
+				if (currentFrameIndex == 11) {
+				    return;
+				}
+				meatAmountSprite.setFrameIndex(currentFrameIndex + 1);
 			} 
 
 			if(tileHere == TRACK_DIRT_VEGE) {
 				trackGrid[trackIndexUnderCar] = TRACK_DIRT;
+				trackGrid[trackIndexUnderCar] = TRACK_DIRT;
+				var currentFrameIndex = vegAmountSprite.getFrameIndex();
+				if (currentFrameIndex == 11) {
+				    return;
+				}
+				vegAmountSprite.setFrameIndex(currentFrameIndex + 1);
 			} 
 			whichCar.friction = getFrictionForTileType(tileHere);
 		}
