@@ -116,6 +116,7 @@ function carTrackHandling(whichCar) {
 			whichCar.y -= Math.sin(whichCar.ang) * whichCar.speed;
 
 			whichCar.speed *= -0.5;
+			
 		} // end of track found
 	} // end of valid col and row
 } // end of carTrackHandling func

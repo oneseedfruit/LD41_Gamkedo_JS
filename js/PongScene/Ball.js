@@ -37,6 +37,7 @@ function Ball(canvas) {
             launchPlantMode = false;
             launchMeatMode = false;
             foodInPlay = false;
+            // screenshake(2);
             if (this.cookedLevel <= 2) {
                 DecreaseFrameIndexBasedOnFoodQuality(2);
             } else if (this.cookedLevel <= 6) {
