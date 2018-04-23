@@ -66,8 +66,8 @@ function pongPaddleMove() {
 
     if (keyHeld_RightPong) {
         paddle1X += PADDLE_SPEED;
-        if (paddle1X >= 790 - PADDLE_THICKNESS) {
-            paddle1X = 790 - PADDLE_THICKNESS;
+        if (paddle1X >= canvas.width) {
+            paddle1X = canvas.width
         }
     }
 }

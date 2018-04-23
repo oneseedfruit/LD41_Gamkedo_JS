@@ -141,6 +141,7 @@ function keyPressed(evt) {
             break;
         case KEY_ENTER:
             if (gameOverState) {
+                resetGame();
                 mainMenuState = true;
                 gameOverState = false;
                 gameOverMusic.pauseSound();

@@ -9,7 +9,6 @@ var gameOverState = false;
 var creditsState = false;
 
 function drawMainMenu() {
-    // colorRect(0, 0, canvas.width, canvas.height, "black");
     canvasContext.drawImage(menuPic, 0, 0);
 }
 
@@ -20,7 +19,7 @@ function drawMainMenu() {
 //     colorText("[C]redits", canvas.width/2, 400, "white", "20px Arial", "center", 1);
 // }
 
-function drawHelpScreen() {
+function drawScreenBlack() {
      colorRect(0, 0, canvas.width, canvas.height);
 }
 
@@ -64,7 +63,7 @@ function setGameStates() {
     };
     
     if (helpState) {
-        drawHelpScreen();
+        drawScreenBlack();
         showHelpScreenText();
         return;
     };
@@ -113,15 +112,14 @@ function setGameStates() {
         drawTracks();
         playerCar.draw();
         canvasContext.restore();
-        fuelMeterSprite.render(canvas.width/2 - (fuelMeterSprite.width/9)/2,15);
         return;
     }
     if (gameOverState) {
-        drawHelpScreen();
+        drawScreenBlack();
         colorText("You lose!\n .Press [Enter] to go to menu", canvas.width/2, canvas.height/2, "white", "20px Arial", "center", 1);
     }
     if (creditsState) {
-        drawHelpScreen();
+        drawScreenBlack();
         showCreditsText();
     }
 }

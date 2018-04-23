@@ -39,6 +39,13 @@ function updateAll() {
 	moveAll();
 	drawAll();
 	particles.update();
+	checkFuelMeter();
+}
+
+function resetGame() {
+	playerCar.x = 75;
+	playerCar.y = 75;
+	fuelMeterSprite.reset();
 }
 
 function moveAll() {
@@ -54,9 +61,23 @@ function drawAll() {
 	//particles.clear();
     setGameStates();
     particles.draw();
-    if( isKitchenMode || isDrivingMode ){
+    if (!mainMenuState) {
+    	fuelMeterSprite.render(canvas.width/2 - (fuelMeterSprite.width/9)/2,15);
+    }
+    /*if( isKitchenMode || isDrivingMode ){
 	    //timer.drawTimer();
 	    //timer.alertMessage();
 	    //drawFullnessLevel();
-    }
+    }*/
+}
+
+function checkFuelMeter() {
+	var currentFrameIndex = fuelMeterSprite.getFrameIndex();
+	var fuelMeterSpriteMaxFrames = 9;
+	if (currentFrameIndex == fuelMeterSpriteMaxFrames - 1) {
+		isKitchenMode = false;
+        isDrivingMode = false;
+        foodInPlay = false;
+		gameOverState = true;
+	} 
 }
