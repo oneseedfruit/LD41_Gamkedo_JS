@@ -6,6 +6,8 @@ var loseScreenPic = document.createElement("img");
 var hippoCarPic = document.createElement("img");
 var particlePic = document.createElement("img");
 var panPaddle = document.createElement("img");
+var bottomPaddle = document.createElement("img");
+var topPaddle = document.createElement("img");
 
 //sprites
 var hippoCarPicTailwag = document.createElement("img");
@@ -126,7 +128,8 @@ function loadImages() {
 
 	{varName: hippoCarPic, theFile: "foodTruck.png"},
 	{varName: particlePic, theFile: "particle.png"},
-    {varName: panPaddle, theFile: "pan.png"},
+    {varName: bottomPaddle, theFile: "bottomplayer.png"},
+    {varName: topPaddle, theFile: "topplayer.png"},
 
 	{TrackType: TRACK_ROAD, theFile: "Level_Tile_Road.png"},
 	{TrackType: TRACK_WALL, theFile: "Level_Tile_Edge_Road_Obelisk.png"},
