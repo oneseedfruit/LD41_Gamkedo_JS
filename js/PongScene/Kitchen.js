@@ -13,8 +13,8 @@ function kitchenStuff() {
     fuelMeterSprite.render(canvas.width/2 - (fuelMeterSprite.width/9)/2,15);
 
     //paddle 1
-    //colorRect(paddle1X, paddle1Y, PADDLE_THICKNESS, PADDLE_HEIGHT, "white");
-    canvasContext.drawImage(panPaddle, paddle1X, paddle1Y, PADDLE_THICKNESS, PADDLE_HEIGHT)
+    colorRect(paddle1X, paddle1Y, PADDLE_THICKNESS, PADDLE_HEIGHT, "white");
+   /* canvasContext.drawImage(panPaddle, paddle1X, paddle1Y, PADDLE_THICKNESS, PADDLE_HEIGHT)*/
 
     //paddle 2
     colorRect(paddle2X, paddle2Y, PADDLE_THICKNESS, PADDLE_HEIGHT, "white");
