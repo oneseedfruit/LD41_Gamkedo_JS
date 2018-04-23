@@ -93,10 +93,10 @@ function loadImages() {
 
 	{TrackType: TRACK_ROAD, theFile: "Level_Tile_Road.png"},
 	{TrackType: TRACK_WALL, theFile: "Level_Tile_Edge_Road_Obelisk.png"},
-	{TrackType: TRACK_GOAL, theFile: "track_goal.png"},
+	{TrackType: TRACK_GOAL, theFile: "Level_Tile_FinishLine.png"},
 	{TrackType: TRACK_DIRT, theFile: "Level_Tile_Dirt.png"},
 	{TrackType: TRACK_BOULDER, theFile: "Level_Tile_Boulder.png"},
-	{TrackType: TRACK_OBELISK, theFile: "Level_Tile_Edge_Road_Obelisk.png"},
+	{TrackType: TRACK_OBELISK, theFile: "Level_Tile_Obelisk.png"},
 	];
 
 	picsToLoad = imageList.length;
