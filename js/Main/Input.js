@@ -12,6 +12,7 @@ const KEY_BACKSPACE = 8
 const KEY_ENTER = 13;
 const KEY_ESCAPE = 27;
 const KEY_SPACE = 32;
+const KEY_C = 67;
 const KEY_P = 80;
 const KEY_H = 72;
 const KEY_Q = 81;
@@ -32,6 +33,12 @@ function setupInput() {
 	document.addEventListener('keydown', keyPressed);
 	document.addEventListener('keyup', keyReleased);
 };
+
+function gameLevelInitialize(){
+    timer.secondsRemaining = 20;
+    loadTrack(levelOne);
+    timer.setupTimer();
+}
 
 function keySet(keyEvent, whichCar, setTo) {
     if(keyEvent.keyCode == KEY_A || keyEvent.keyCode == KEY_LEFT_ARROW) {
@@ -93,27 +100,37 @@ function keyPressed(evt) {
 		case KEY_RIGHT_ARROW:
 			break;
         case KEY_SPACE:
-            if (!gameOverState) {
              switchBetweenDrivingAndCooking();   
-            }
             break;
         case KEY_P: 
             if (mainMenuState) {
                 isDrivingMode = true;
                 mainMenuState = false;
-                timer.secondsRemaining = 20;
-                loadTrack(levelOne);
-                timer.setupTimer();
+                gameLevelInitialize();
             }
             if (helpState) {
                 helpState = false;
                 isDrivingMode = true;
+                gameLevelInitialize();
             }
+             if (creditsState) {
+                creditsState = false;
+                isDrivingMode = true;
+                gameLevelInitialize();
+            }
+            
             break;
         case KEY_H:
             if (mainMenuState) {
                 helpState = true;
                 mainMenuState = false;
+            }
+            break;
+        case KEY_C:
+            if (mainMenuState) {
+                creditsState = true;
+                mainMenuState = false;
+                isDrivingMode = false;
             }
             break;
         case KEY_Q:

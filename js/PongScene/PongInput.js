@@ -5,7 +5,8 @@ function switchBetweenDrivingAndCooking() {
     if (isDrivingMode && !mainMenuState && !helpState) {
         isKitchenMode = true;
         isDrivingMode = false;
-    } else if (isKitchenMode) {
+    }
+     else if (isKitchenMode) {
         isDrivingMode = true;
         isKitchenMode = false;
         launchPlantMode = false;
@@ -15,6 +16,10 @@ function switchBetweenDrivingAndCooking() {
     if (helpState) {
         mainMenuState = true;
         helpState = false;
+    }
+    if (creditsState) {
+        mainMenuState = true;
+        creditsState = false;
     }
 
     ball.ballX = 400 - PADDLE_THICKNESS/2;

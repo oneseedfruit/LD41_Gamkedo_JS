@@ -42,7 +42,7 @@ function updateAll() {
 	}
 	moveAll();
 	drawAll();
-	// particles.update();
+	particles.update();
 }
 
 function moveAll() {
@@ -56,8 +56,11 @@ function moveAll() {
 }
 
 function drawAll() {
+	particles.clear();
     setGameStates();
     particles.draw();
-    timer.drawTimer();
-    timer.alertMessage();
+    if( isKitchenMode || isDrivingMode ){
+	    timer.drawTimer();
+	    timer.alertMessage();
+    }
 }
