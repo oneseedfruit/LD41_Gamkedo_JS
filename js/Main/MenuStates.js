@@ -49,7 +49,7 @@ function showCreditsText() {
     colorText("Harleen Dualan: Pong/ Kitchen Scenne, Game art", 150, 240, "white", "16px Arial", "left", 1);
     colorText("Nick: Frame rate optimizaiton", 150, 270, "white", "16px Arial", "left", 1);
     colorText("Terrence McDonnell: Track code, main game code, Food Counter", 150, 300, "white", "16px Arial", "left", 1);
-    colorText("Simon Hoffiz: Level art", 150, 330, "white", "16px Arial", "left", 1);
+    colorText("Simon Hoffiz: Level Design & Level Art", 150, 330, "white", "16px Arial", "left", 1);
     colorText("Asix Jin: Main game music", 150, 360, "white", "16px Arial", "left", 1);
     colorText("Cameron button: Refrigerator idea", 150, 390, "white", "16px Arial", "left", 1);
     colorText("Press  [SPACE]  To Return To Menu Or  [P]  to Play", canvas.width/2, 500, "white", "20px Arial", "center", 1);
