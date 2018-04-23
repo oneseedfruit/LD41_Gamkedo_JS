@@ -16,7 +16,7 @@ var levelOne = [ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
 				 1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1,
 				 1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1,
 				 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1,
-				 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1,
+				 1, 1, 1, 1, 1, 4, 5, 6, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1,
 				 1, 1, 1, 1, 1, 1, 2, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
 
 var trackGrid = [];			 
@@ -24,6 +24,9 @@ const TRACK_ROAD = 0;
 const TRACK_WALL = 1;
 const TRACK_PLAYERSTART = 2;
 const TRACK_GOAL = 3;
+const TRACK_DIRT = 4;
+const TRACK_BOULDER = 5;
+const TRACK_OBELISK = 6;
 
 function returnTileTypeAtColRow(col, row) {
 	if(col >= 0 && col < TRACK_COLS &&
