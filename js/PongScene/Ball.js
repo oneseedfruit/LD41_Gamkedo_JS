@@ -63,7 +63,7 @@ function Ball(canvas) {
             !crossingMiddle) {
             crossingMiddle = true;
             smokeScreenEffect(this.ballX, this.ballY);
-            this.cookedLevel+=2;
+            this.cookedLevel++;
             if (launchMeatMode) {
                 if (this.cookedLevel == 5 && !cookedToPerfection) {
                     var currentFrameIndex = meatBallSprite.getFrameIndex();
