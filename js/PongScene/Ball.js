@@ -81,7 +81,7 @@ function Ball(canvas) {
                     launchMeatMode = false;
                     foodInPlay = false;
                     return;
-                } // end of if cookedlevel >= 13
+                } // end of if cookedlevel >= 15
             } // end of if launchMeatMode
             if (launchPlantMode) {
                 if (this.cookedLevel == 4 && !cookedToPerfection) {
@@ -100,7 +100,7 @@ function Ball(canvas) {
                     launchPlantMode = false;
                     foodInPlay = false;
                     return;
-                } // end of if cookedlevel >= 10
+                } // end of if cookedlevel >= 13
             } // end of if launchPlantMode section
         } // end of if ball crosses middle
 

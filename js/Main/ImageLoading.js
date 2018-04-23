@@ -19,6 +19,12 @@ var meatBallSprite;
 var vegBallPic = document.createElement("img");
 var vegBallSprite;
 
+var meatAmountPic = document.createElement("img");
+var meatAmountSprite;
+
+var vegAmountPic = document.createElement("img");
+var vegAmountSprite;
+
 var trackPics = [];
 
 var picsToLoad = 0; // set automatically based on imageList in loadImages()
@@ -86,6 +92,28 @@ function setUpImages() {
 		ticksPerFrame: 0,
 	});
 	vegBallPic.src = "images/pong_vegeball_all.png";
+
+	meatAmountSprite = sprite({
+		context: canvasContext,
+		width: 418,
+		height: 290,
+		image: meatAmountPic,
+		loop: false,
+		numberOfFrames: 11,
+		ticksPerFrame: 0,
+	});
+	meatAmountPic.src = "images/meatAmountBar.png";
+
+	vegAmountSprite = sprite({
+		context: canvasContext,
+		width: 418,
+		height: 290,
+		image: vegAmountPic,
+		loop: false,
+		numberOfFrames: 11,
+		ticksPerFrame: 0,
+	});
+	vegAmountPic.src = "images/vegeAmountBar.png";
 }
 
 function loadImages() {
