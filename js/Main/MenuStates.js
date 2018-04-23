@@ -69,6 +69,7 @@ function setGameStates() {
                 var measuredText = canvasContext.measureText(Math.floor(stateText));
                 colorText(stateText,canvas.width/2 - measuredText.width/2 ,canvas.height/1.25,
                             "black","30px Arial", "center", 1);
+                fullnessLevel++;
             } else if (ball.ballY >= canvas.height) {
                 var stateText = "Food lost...";
                 var measuredText = canvasContext.measureText(Math.floor(stateText));

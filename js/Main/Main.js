@@ -60,4 +60,5 @@ function drawAll() {
     particles.draw();
     timer.drawTimer();
     timer.alertMessage();
+    drawFullnessLevel();
 }

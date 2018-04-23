@@ -3,6 +3,9 @@ var launchPlantMode = false;
 
 var cookingThickness = 15;
 
+//will probably be satisfaction in game?
+var fullnessLevel = 3;
+
 var ball = new Ball(document.getElementById('gameCanvas'));
 
 function kitchenStuff() {
@@ -18,4 +21,10 @@ function kitchenStuff() {
 
     //laser / net / fire / what?
     colorRect(0, canvas.height/2, canvas.width, 2, "red");
+}
+
+function drawFullnessLevel() {
+    if (!mainMenuState && !helpState && !gameOverState) {
+        colorText('Satisfaction: ' + fullnessLevel, 150, 50, 'white', "16px Arial", "center", 1);   
+    }
 }
