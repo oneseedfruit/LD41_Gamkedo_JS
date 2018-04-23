@@ -86,15 +86,16 @@ function setGameStates() {
             }
         } else if (!foodInPlay) {
             if (ball.ballY <= 0) {
-                var stateText = "Hippogriff fed!";
-                var measuredText = canvasContext.measureText(Math.floor(stateText));
-                colorText(stateText,canvas.width/2 - measuredText.width/2 ,canvas.height/1.25,
-                            "black","30px Arial", "center", 1);
+                var stateText = "Hippogriff Fed!";
+             /*   colorText(stateText,canvas.width/2 - measuredText.width/2 ,canvas.height/1.25,
+                            "black","30px Arial", "center", 1);*/
+                drawStroked(stateText,canvas.width/2,100, "#983f5e","30px Arial", "center", 1)
             } else if (ball.ballY >= canvas.height) {
-                var stateText = "Food lost...";
-                var measuredText = canvasContext.measureText(Math.floor(stateText));
-                colorText(stateText,canvas.width/2 - measuredText.width/2 ,canvas.height/1.25,
-                            "black","30px Arial", "center", 1);
+                var stateText = "Food Lost...";
+                /*colorText(stateText,canvas.width/2 - measuredText.width/2 ,canvas.height/1.25,
+                            "black","30px Arial", "center", 1);*/
+                drawStroked(stateText,canvas.width/2,canvas.height/1.25,
+                            "#983f5e","30px Arial", "center", 1)
             }
         }
     };

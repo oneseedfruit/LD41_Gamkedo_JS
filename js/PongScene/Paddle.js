@@ -2,7 +2,7 @@ const PADDLE_HEIGHT = 20;
 const PADDLE_THICKNESS = 100;
 const PADDLE_DIST_FROM_EDGE = 60;
 const PADDLE_SPEED = 20;
-const COMPUTER_PADDLE_SPEED = 8;
+const COMPUTER_PADDLE_SPEED = 10;
 
 var paddle1X = 400 - PADDLE_THICKNESS/2,
     paddle1Y = 600 - PADDLE_DIST_FROM_EDGE;
@@ -24,9 +24,9 @@ function movePaddleAI() {
     var centreOfPaddle2X = paddle2X + (PADDLE_THICKNESS / 2);
     if (ball.ballY <= canvas.height/2) {
     	gotoX = ball.ballX;
-        if (centreOfPaddle2X < gotoX - 35) {
+        if (centreOfPaddle2X < gotoX - 50) {
             paddle2X += COMPUTER_PADDLE_SPEED;
-        } else if (centreOfPaddle2X > gotoX + 35) {
+        } else if (centreOfPaddle2X > gotoX + 50) {
             paddle2X -= COMPUTER_PADDLE_SPEED;
         }     
     }
