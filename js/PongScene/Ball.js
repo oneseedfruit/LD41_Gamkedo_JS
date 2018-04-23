@@ -10,7 +10,8 @@ function Ball(canvas) {
 
     
     this.meatDraw = function() {
-        colorCircle(this.ballX, this.ballY, 10, "red");
+        //colorCircle(this.ballX, this.ballY, 10, "red");
+        drawBitmapCenteredWithRotation(rawMeatPongBall, this.ballX,this.ballY);
 
     };
     
