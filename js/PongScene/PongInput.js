@@ -49,8 +49,8 @@ function pongReleaseVeg() {
 function pongPaddleMove() {
     if (keyHeld_LeftPong) {
         paddle1X -= PADDLE_SPEED;
-        if (paddle1X <= 10 ) {
-            paddle1X = 10;
+        if (paddle1X <= 0 ) {
+            paddle1X = 0;
         }
     }
 

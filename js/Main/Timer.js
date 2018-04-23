@@ -1,4 +1,4 @@
-function TimerClass() {
+/*function TimerClass() {
     this.secondsRemaining = 20;
     this.timeTick = function () {
         this.secondsRemaining--;
@@ -36,3 +36,4 @@ function TimerClass() {
         }
     }
 }
+*/
