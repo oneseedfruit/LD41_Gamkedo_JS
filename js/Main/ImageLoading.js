@@ -2,6 +2,7 @@
 var menuPic = document.createElement("img");
 var winScreenPic = document.createElement("img");
 var kitchenPic = document.createElement("img");
+var loseScreenPic = document.createElement("img");
 var hippoCarPic = document.createElement("img");
 var particlePic = document.createElement("img");
 var panPaddle = document.createElement("img");
@@ -121,6 +122,7 @@ function loadImages() {
 	{varName: menuPic, theFile: "menu.png"},
     {varName: kitchenPic, theFile: "kitchenbg.png"},
     {varName: winScreenPic, theFile: "winScreen.png"},
+    {varName: loseScreenPic, theFile: "losescreen.png"},
 
 	{varName: hippoCarPic, theFile: "foodTruck.png"},
 	{varName: particlePic, theFile: "particle.png"},

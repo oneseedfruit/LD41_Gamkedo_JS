@@ -115,9 +115,11 @@ function setGameStates() {
         return;
     }
     if (gameOverState) {        
+        canvasContext.drawImage(loseScreenPic, 0, 0);
+        colorText("YOU", 65, 200, "white", "50px Arial", "left", 1);
+        colorText("LOSE", 50, 300, "#831a1a", "70px Arial", "left", 1);
+        colorText("Press [ ENTER ] to Return To Menu", 10, 370, "white", "18px Arial", "left", 1);
         
-        colorRect(0,0, canvas.width,canvas.height, "red");
-        colorText("You lose!\n .Press [Enter] to go to menu", canvas.width/2, canvas.height/2, "white", "20px Arial", "center", 1);
     }
     if (winState) {
         canvasContext.drawImage(winScreenPic, 0, 0);
