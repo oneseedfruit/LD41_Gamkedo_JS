@@ -29,7 +29,6 @@ function Ball(canvas) {
         }
 
         if (this.ballY <= 0) {
-            
             foodInPlay = false;
             if (launchMeatMode) {
                 if (this.cookedLevel <= 2) {
@@ -51,6 +50,7 @@ function Ball(canvas) {
             }
             launchPlantMode = false;
             launchMeatMode = false;
+            //screenshake(5);
             return; 
         } 
         

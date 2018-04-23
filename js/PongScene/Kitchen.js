@@ -18,7 +18,7 @@ function kitchenStuff() {
     colorRect(paddle2X, paddle2Y, PADDLE_THICKNESS, PADDLE_HEIGHT, "white");
 
     //laser / net / fire / what?
-    colorRect(0, canvas.height/2, canvas.width, 2, "red");
+    //colorRect(0, canvas.height/2, canvas.width, 3, "#aa4c53");
 }
 
 /*function drawFullnessLevel() {

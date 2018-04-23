@@ -63,6 +63,9 @@ function drawAll() {
 	    //timer.alertMessage();
 	    //drawFullnessLevel();
     }*/
+     if (!mainMenuState && !gameOverState && !helpState) {
+        colorText("Fuel:", 345, 27, "white", "14px Arial", "center", 1);
+    }
 }
 
 function checkFuelMeter() {
