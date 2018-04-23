@@ -1,5 +1,6 @@
 // still images
 var menuPic = document.createElement("img");
+var winScreenPic = document.createElement("img");
 var kitchenPic = document.createElement("img");
 var hippoCarPic = document.createElement("img");
 var particlePic = document.createElement("img");
@@ -91,6 +92,7 @@ function loadImages() {
 	var imageList = [
 	{varName: menuPic, theFile: "menu.png"},
     {varName: kitchenPic, theFile: "kitchenbg.png"},
+    {varName: winScreenPic, theFile: "winScreen.png"},
 
 	{varName: hippoCarPic, theFile: "foodTruck.png"},
 	{varName: particlePic, theFile: "particle.png"},

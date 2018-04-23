@@ -55,7 +55,7 @@ function drawAll() {
 	//particles.clear();
     setGameStates();
     particles.draw();
-    if (!mainMenuState && !helpState && !creditsState) {
+    if (!mainMenuState && !helpState && !creditsState && !winState) {
     	fuelMeterSprite.render(canvas.width/2 - (fuelMeterSprite.width/9)/2,15);
     }
     /*if( isKitchenMode || isDrivingMode ){

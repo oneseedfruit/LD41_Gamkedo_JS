@@ -5,5 +5,6 @@ function resetGame() {
     fuelMeterSprite.reset();
     menuMusic.loopSong();
     gameOverState = false;
+    winState = false;
     mainMenuState = true;
 }

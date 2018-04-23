@@ -3,9 +3,11 @@ var foodInPlay = false;
 var isKitchenMode = false;
 var isDrivingMode = true;
 
+var winState = false;
+var gameOverState = false;
+
 var mainMenuState = true;
 var helpState = false;
-var gameOverState = false;
 var creditsState = false;
 
 function drawMainMenu() {
@@ -95,7 +97,6 @@ function setGameStates() {
                             "black","30px Arial", "center", 1);
             }
         }
-        return;
     };
     
     if (isDrivingMode) {
@@ -120,6 +121,11 @@ function setGameStates() {
         colorRect(0,0, canvas.width,canvas.height, "red");
         colorText("You lose!\n .Press [Enter] to go to menu", canvas.width/2, canvas.height/2, "white", "20px Arial", "center", 1);
     }
+    if (winState) {
+        canvasContext.drawImage(winScreenPic, 0, 0);
+        DontCookMusic.pauseSound();
+    }
+
     if (creditsState) {
         drawScreenBlack();
         showCreditsText();

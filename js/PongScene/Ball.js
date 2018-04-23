@@ -141,8 +141,11 @@ function Ball(canvas) {
 function DecreaseFrameIndexBasedOnFoodQuality(Quality) {
     var currentFrameIndex = fuelMeterSprite.getFrameIndex();
     currentFrameIndex -= Quality;
+    var currentDistanceTravelled = playerCar.distanceTravelled;
+    playerCar.distanceTravelled = 0;
     if (currentFrameIndex < 0) {
         currentFrameIndex = 0;
+        playerCar.distanceTravelled = currentDistanceTravelled;
     }
     fuelMeterSprite.setFrameIndex(currentFrameIndex);
 };

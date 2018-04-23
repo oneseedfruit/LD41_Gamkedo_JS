@@ -105,8 +105,9 @@ function carTrackHandling(whichCar) {
 
 		if(trackTypeIsPassable(tileHere)){
 			if(tileHere == TRACK_GOAL) {
-				console.log(whichCar.name + " WINS!");
-				loadTrack(levelOne);
+				winState = true;
+				isDrivingMode = false;
+				isKitchenMode = false;
 			} 
 			whichCar.friction = getFrictionForTileType(tileHere);
 		}
