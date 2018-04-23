@@ -97,3 +97,13 @@ function drawImageRotatedAlpha(canvasContext, image, x, y, angle, opacity) {
 	canvasContext.drawImage(image, -image.width / 2, -image.height / 2);
 	canvasContext.restore();
 }
+
+function drawStroked(text, x, y,fillColor,font,align = 'left') {
+  canvasContext.font = font;
+  canvasContext.strokeStyle = 'white';
+  canvasContext.textAlign = align;
+  canvasContext.lineWidth = 5;
+  canvasContext.strokeText(text, x, y);
+  canvasContext.fillStyle = fillColor;
+  canvasContext.fillText(text, x, y);
+}
