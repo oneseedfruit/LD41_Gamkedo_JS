@@ -1,4 +1,6 @@
 var crossingMiddle = false;
+var cookedToPerfection = false;
+var burntToACrisp = false;
 
 // Ball class constructor: 1 class per file, file name is "class name".js
 function Ball(canvas) {
@@ -62,43 +64,42 @@ function Ball(canvas) {
             crossingMiddle = true;
             smokeScreenEffect(this.ballX, this.ballY);
             this.cookedLevel+=2;
-            console.log(this.cookedLevel)
-            var cookedToPerfection = false;
-            var burntToACrisp = false;
             if (launchMeatMode) {
-                if (this.cookedLevel == 2 && !cookedToPerfection) {
+                if (this.cookedLevel == 5 && !cookedToPerfection) {
                     var currentFrameIndex = meatBallSprite.getFrameIndex();
                     currentFrameIndex++;
                     meatBallSprite.setFrameIndex(currentFrameIndex);
                     cookedToPerfection = true;
                 }
-                if (this.cookedLevel == 10 && !burntToACrisp) {
+                if (this.cookedLevel == 12 && !burntToACrisp) {
                     var currentFrameIndex = meatBallSprite.getFrameIndex();
                     currentFrameIndex++;
                     meatBallSprite.setFrameIndex(currentFrameIndex);
                     burntToACrisp = true;
                 }
-                if (this.cookedLevel == 12 && burntToACrisp) {
+                if (this.cookedLevel == 15 && burntToACrisp) {
                     launchMeatMode = false;
                     foodInPlay = false;
+                    return;
                 } // end of if cookedlevel >= 13
             } // end of if launchMeatMode
             if (launchPlantMode) {
-                if (this.cookedLevel == 3 && !cookedToPerfection) {
+                if (this.cookedLevel == 4 && !cookedToPerfection) {
                     var currentFrameIndex = vegBallSprite.getFrameIndex();
                     currentFrameIndex++;
                     vegBallSprite.setFrameIndex(currentFrameIndex);
                     cookedToPerfection = true;
                 }
-                if (this.cookedLevel == 7 && !burntToACrisp) {
+                if (this.cookedLevel == 9 && !burntToACrisp) {
                     var currentFrameIndex = vegBallSprite.getFrameIndex();
                     currentFrameIndex++;
                     vegBallSprite.setFrameIndex(currentFrameIndex);
                     burntToACrisp = true;
                 }
-                if (this.cookedLevel >= 10 && burntToACrisp) {
+                if (this.cookedLevel >= 13 && burntToACrisp) {
                     launchPlantMode = false;
                     foodInPlay = false;
+                    return;
                 } // end of if cookedlevel >= 10
             } // end of if launchPlantMode section
         } // end of if ball crosses middle
@@ -131,6 +132,9 @@ function Ball(canvas) {
         this.cookedLevel = 0;
         meatBallSprite.reset();
         vegBallSprite.reset();
+        cookedToPerfection = false;
+        burntToACrisp = false;
+        crossingMiddle = false;
     }
 }
 
