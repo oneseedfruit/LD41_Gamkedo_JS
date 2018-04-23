@@ -3,14 +3,13 @@ var launchPlantMode = false;
 
 var cookingThickness = 15;
 
-//will probably be satisfaction in game?
-var fullnessLevel = 3;
-
 var ball = new Ball(document.getElementById('gameCanvas'));
 
 function kitchenStuff() {
     //kitchen bg
     colorRect(0, 0, canvas.width, canvas.height, "lightgrey");
+
+    fuelMeterSprite.render(canvas.width/2 - (fuelMeterSprite.width/9)/2,15);
 
     //paddle 1
     //colorRect(paddle1X, paddle1Y, PADDLE_THICKNESS, PADDLE_HEIGHT, "white");
@@ -23,8 +22,8 @@ function kitchenStuff() {
     colorRect(0, canvas.height/2, canvas.width, 2, "red");
 }
 
-function drawFullnessLevel() {
+/*function drawFullnessLevel() {
     if (!mainMenuState && !helpState && !gameOverState) {
         colorText('Satisfaction: ' + fullnessLevel, 150, 50, 'white', "16px Arial", "center", 1);   
     }
-}
+}*/

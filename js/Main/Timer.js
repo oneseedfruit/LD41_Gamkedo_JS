@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 var countdownTimer;
 function TimerClass() {
+=======
+/*function TimerClass() {
+>>>>>>> b29631b9e88aed98507f6489c5a484c27a8aac55
     this.secondsRemaining = 20;
     this.isRunning = false;
     this.timeTick = function () {
@@ -41,3 +45,4 @@ function TimerClass() {
         }
     }
 }
+*/

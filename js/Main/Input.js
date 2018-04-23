@@ -35,9 +35,9 @@ function setupInput() {
 };
 
 function gameLevelInitialize(){
-    timer.secondsRemaining = 20;
+    //timer.secondsRemaining = 20;
     loadTrack(levelOne);
-    timer.setupTimer();
+    //timer.setupTimer();
 }
 
 function keySet(keyEvent, whichCar, setTo) {

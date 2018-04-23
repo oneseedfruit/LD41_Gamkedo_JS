@@ -77,10 +77,12 @@ function setGameStates() {
         movePaddleAI();
         if (foodInPlay) {
             if (launchPlantMode) {
+                ball.ballMove();
                 ball.plantDraw();
                 return;
             }
             if (launchMeatMode) {
+                ball.ballMove();
                 ball.meatDraw();
                 return;
             }
@@ -125,30 +127,5 @@ function setGameStates() {
     if (creditsState) {
         drawHelpScreen();
         showCreditsText();
-    }
-}
-
-function updateGameStates() {
-     if (mainMenuState) {
-        return;
-    }
-    if (helpState) {
-        return;
-    }
-    if (isKitchenMode) {
-        if (launchMeatMode || launchPlantMode) {
-            ball.ballMove();
-            return;
-        }
-        return;
-    }
-    if (isDrivingMode) {
-        return;
-    }
-    if (gameOverState) {
-        return;
-    }
-     if (creditsState) {
-        return;
     }
 }

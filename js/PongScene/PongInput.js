@@ -7,8 +7,8 @@ function switchBetweenDrivingAndCooking() {
     if (isDrivingMode && !mainMenuState && !helpState) {
         isKitchenMode = true;
         isDrivingMode = false;
-        console.log("kitchen mode");
-        clearInterval(countdownTimer);
+        // console.log("kitchen mode");
+        // clearInterval(countdownTimer);
        
     }
 
@@ -19,9 +19,9 @@ function switchBetweenDrivingAndCooking() {
         launchPlantMode = false;
         launchMeatMode = false;
         foodInPlay = false;
-         if(timer.isRunning){p
-            timer.setupTimer();
-        }
+        //  if(timer.isRunning){p
+        //     timer.setupTimer();
+        // }
 
     }
 
@@ -59,8 +59,8 @@ function pongReleaseVeg() {
 function pongPaddleMove() {
     if (keyHeld_LeftPong) {
         paddle1X -= PADDLE_SPEED;
-        if (paddle1X <= 10 ) {
-            paddle1X = 10;
+        if (paddle1X <= 0 ) {
+            paddle1X = 0;
         }
     }
 
