@@ -21,10 +21,6 @@ window.onload = function() {
 }
 
 function imageLoadingDoneSoStartGame() {
-	startGame();
-}
-
-function startGame() {
 	setInterval(updateAll, 1000/FRAMES_PER_SECOND);
 	setupInput();
 }
