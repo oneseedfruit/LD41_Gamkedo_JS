@@ -21,13 +21,13 @@ function Ball(canvas) {
             foodInPlay = false;
             launchPlantMode = false;
             launchMeatMode = false;
-            if (fullnessLevel > 0) {
-               fullnessLevel--;   
+          /*  if (fullnessLevel > 0) {
+               fullnessLevel-= 1;   
             } else if (fullnessLevel == 0) {
                 isKitchenMode = false;
                 isDrivingMode = false;
                 gameOverState = true;
-            }
+            }*/
             return;
         }
 
