@@ -75,25 +75,23 @@ function setGameStates() {
             if (launchPlantMode) {
                 ball.ballMove();
                 ball.plantDraw();
+                displayFoodStatus(vegBallSprite,13);
                 return;
             }
             if (launchMeatMode) {
                 ball.ballMove();
                 ball.meatDraw();
+                displayFoodStatus(meatBallSprite,15);
                 return;
             }
         } else if (!foodInPlay) {
             if (ball.ballY <= 0) {
                 var stateText = "Hippogriff Fed!";
-             /*   colorText(stateText,canvas.width/2 - measuredText.width/2 ,canvas.height/1.25,
-                            "black","30px Arial", "center", 1);*/
-                drawStroked(stateText,canvas.width/2,100, "#983f5e","30px Arial", "center", 1)
+                drawStroked(stateText,canvas.width/2,100, "#983f5e","30px Arial", "center", 1);
             } else if (ball.ballY >= canvas.height) {
                 var stateText = "Food Lost...";
-                /*colorText(stateText,canvas.width/2 - measuredText.width/2 ,canvas.height/1.25,
-                            "black","30px Arial", "center", 1);*/
                 drawStroked(stateText,canvas.width/2,canvas.height/1.25,
-                            "#983f5e","30px Arial", "center", 1)
+                            "#983f5e","30px Arial", "center", 1);
             }
         }
     };
@@ -130,5 +128,29 @@ function setGameStates() {
     if (creditsState) {
         drawScreenBlack();
         showCreditsText();
+    }
+}
+
+function displayFoodStatus(sprite, cookedLevelWhenDisappears) {
+    var stateText = "";
+    if (sprite.getFrameIndex() == 0) {
+        stateText = "Rawwwww";
+        drawStroked(stateText,canvas.width/2,canvas.height/2, 
+            "#983f5e","30px Arial", "center", 1);
+        }
+    if (sprite.getFrameIndex() == 1) {     
+        stateText = "Perfection!";
+        drawStroked(stateText,canvas.width/2,canvas.height/2, 
+            "#983f5e","30px Arial", "center", 1);
+    }
+    if (sprite.getFrameIndex() == 2) { 
+        stateText = "Burnt.";
+        drawStroked(stateText,canvas.width/2,canvas.height/2, 
+            "#983f5e","30px Arial", "center", 1);
+    }
+    if (ball.cookedLevel == cookedLevelWhenDisappears) {
+        stateText = "Nothing left of it...";
+        drawStroked(stateText,canvas.width/2,canvas.height/2, 
+            "#983f5e","30px Arial", "center", 1);
     }
 }
