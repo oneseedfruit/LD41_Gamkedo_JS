@@ -36,7 +36,7 @@ function setupInput() {
 
 function gameLevelInitialize(){
     //timer.secondsRemaining = 20;
-    loadTrack(levelOne);
+    loadTrack(levels[level]);
     meatAmountSprite.setFrameIndex(2);
     vegAmountSprite.setFrameIndex(1);
     //timer.setupTimer();
@@ -145,6 +145,14 @@ function keyPressed(evt) {
             if (gameOverState) {
                 resetGame();
             }
+            if (isDrivingMode) {
+            level++;
+               console.log(level);
+
+            loadTrack(levels[level]);
+            }
+            
+            break;
 	}
 };
 

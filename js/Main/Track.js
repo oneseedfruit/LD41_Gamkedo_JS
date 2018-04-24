@@ -125,9 +125,18 @@ function carTrackHandling(whichCar) {
 
 		if(trackTypeIsPassable(tileHere)){
 			if(tileHere == TRACK_GOAL) {
-				winState = true;
-				isDrivingMode = false;
-				isKitchenMode = false;
+
+				if(level > levels.length - 1){
+					level = 0;
+					winState = true;
+					isDrivingMode = false;
+					isKitchenMode = false;
+				}
+				else {
+					level++;
+					loadTrack(level); 
+				}
+				
 			} 
 			
 			if(tileHere == TRACK_DIRT_MEAT) {

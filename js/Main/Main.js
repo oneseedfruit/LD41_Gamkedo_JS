@@ -1,5 +1,6 @@
 var canvas, canvasContext;
 var paused = false;
+var level;
 
 var playerCar = new carClass();
 //var timer = new TimerClass();
@@ -17,6 +18,7 @@ window.onload = function() {
 	colorText(loadingText, canvas.width/2 - textWidth.width * 2, canvas.height/2, 'white');
 	loadImages();
 	setUpImages();
+	level = 0;
 	menuMusic.loopSong();
 }
 
