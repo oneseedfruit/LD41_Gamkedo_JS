@@ -144,12 +144,12 @@ function keyPressed(evt) {
             if (gameOverState) {
                 resetGame();
             }
-            if (isDrivingMode) {
-            level++;
-               console.log(level);
+            // if (isDrivingMode) {
+            // level++;
+            //    console.log(level);
 
-            loadTrack(levels[level]);
-            }
+            // loadTrack(levels[level]);
+            // }
             
             break;
 	}
