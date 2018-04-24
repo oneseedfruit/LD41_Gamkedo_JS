@@ -4,19 +4,19 @@ const TRACK_GAP = 2;
 const TRACK_COLS = 20;
 const TRACK_ROWS = 15;
 var levelOne = [ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-				 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 4, 6,
+				 6, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0,10, 0, 0, 0, 7, 4, 6,
 				 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 8, 6,
 				 6, 0, 0, 4, 7, 5, 5, 5, 5, 5, 5, 5, 5, 5, 0, 0, 0, 7, 4, 6,
-				 6, 0, 0, 4, 7, 8, 4, 7, 4, 7, 4, 7, 7, 5, 0, 0, 0, 5, 8, 6,
-				 6, 0, 0, 5, 4, 5, 5, 4, 8, 7, 4, 4, 4, 5, 0, 0, 0, 4, 4, 6,
-				 6, 0, 0, 5, 4, 4, 5, 4, 4, 4, 4, 5, 8, 5, 0, 0, 0, 4, 7, 6,
-				 6, 0, 0, 5, 8, 4, 4, 5, 4, 7, 8, 7, 4, 5, 0, 0, 0, 8, 4, 6,
-				 6, 0, 0, 5, 4, 7, 4, 4, 5, 5, 4, 4, 5, 5, 0, 0, 0, 8, 4, 6,
+				 6, 0, 0, 4, 7, 4, 4, 4, 4, 4, 4, 4, 4, 5, 0, 0, 0, 5, 8, 6,
+				 6, 0, 0, 5, 4, 5, 5, 4, 8, 4, 4, 4, 4, 5, 0, 0, 0, 4, 4, 6,
+				 6, 0, 9, 5, 4, 4, 5, 4, 4, 4, 4, 5, 8, 5, 0, 0, 0, 4, 7, 6,
+				 6, 0, 0, 5, 8, 4, 4, 5, 4, 4, 8, 7, 4, 5, 0, 9, 0, 8, 4, 6,
+				 6, 0, 0, 5, 4, 4, 4, 4, 5, 5, 4, 4, 5, 5, 0, 0, 0, 8, 4, 6,
 				 6, 0, 0, 5, 4, 4, 4, 4, 4, 4, 5, 5, 4, 5, 0, 0, 0, 4, 5, 6,
-				 6, 2, 0, 5, 4, 8, 8, 4, 4, 4, 7, 7, 4, 4, 0, 0, 0, 4, 4, 6,
+				 6, 2, 0, 5, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 0, 0, 0, 4, 4, 6,
 				 6, 6, 6, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 0, 0, 0, 7, 4, 6,
 				 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 8, 6,
-				 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 7, 6,
+				 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 4, 7, 6,
 				 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6];
 
 var trackGrid = [];			 
@@ -29,13 +29,17 @@ const TRACK_BOULDER = 5;
 const TRACK_OBELISK = 6;
 const TRACK_DIRT_VEGE = 7;
 const TRACK_DIRT_MEAT = 8;
+const TRACK_GROUND_VEGE = 9;
+const TRACK_GROUND_MEAT = 10;
 
 const passableTiles =	[
 	TRACK_ROAD,
 	TRACK_DIRT,
 	TRACK_GOAL,
 	TRACK_DIRT_VEGE,
-	TRACK_DIRT_MEAT
+	TRACK_DIRT_MEAT,
+	TRACK_GROUND_VEGE,
+	TRACK_GROUND_MEAT
 ];
 
 var animTileOscillatorFrame = 0;
@@ -77,9 +81,14 @@ function drawTracks() {
 				if (!useImg)
 					console.log("Missing trackPics[" + tileKindHere + "] in drawTracks!");
 				else{
-					if(tileKindHere == TRACK_DIRT_MEAT || tileKindHere == TRACK_DIRT_VEGE ){
+					
+					if(tileKindHere == TRACK_GROUND_MEAT || tileKindHere == TRACK_GROUND_VEGE ){
+						    canvasContext.drawImage(trackPics[TRACK_ROAD],drawTileX,drawTileY);
+							canvasContext.drawImage(useImg, (Math.floor(animTileOscillatorFrame)%1 )*TRACK_W,0,TRACK_W,TRACK_H, drawTileX,drawTileY,TRACK_W,TRACK_H);
+					}
+					else if(tileKindHere == TRACK_DIRT_MEAT || tileKindHere == TRACK_DIRT_VEGE ){
 						    canvasContext.drawImage(trackPics[TRACK_DIRT],drawTileX,drawTileY);
-							canvasContext.drawImage(useImg, (Math.floor(animTileOscillatorFrame* 0.70)%5)*TRACK_W,0,TRACK_W,TRACK_H, drawTileX,drawTileY,TRACK_W,TRACK_H);
+							canvasContext.drawImage(useImg, (Math.floor(animTileOscillatorFrame )%1)*TRACK_W,0,TRACK_W,TRACK_H, drawTileX,drawTileY,TRACK_W,TRACK_H);
 						}
 					else{
 							canvasContext.drawImage(useImg,drawTileX,drawTileY);
@@ -132,7 +141,23 @@ function carTrackHandling(whichCar) {
 
 			if(tileHere == TRACK_DIRT_VEGE) {
 				trackGrid[trackIndexUnderCar] = TRACK_DIRT;
-				trackGrid[trackIndexUnderCar] = TRACK_DIRT;
+				var currentFrameIndex = vegAmountSprite.getFrameIndex();
+				if (currentFrameIndex == 11) {
+				    return;
+				}
+				vegAmountSprite.setFrameIndex(currentFrameIndex + 1);
+			} 
+			if(tileHere == TRACK_GROUND_MEAT) {
+				trackGrid[trackIndexUnderCar] = TRACK_ROAD;
+				var currentFrameIndex = meatAmountSprite.getFrameIndex();
+				if (currentFrameIndex == 11) {
+				    return;
+				}
+				meatAmountSprite.setFrameIndex(currentFrameIndex + 1);
+			} 
+
+			if(tileHere == TRACK_GROUND_VEGE) {
+				trackGrid[trackIndexUnderCar] = TRACK_ROAD;
 				var currentFrameIndex = vegAmountSprite.getFrameIndex();
 				if (currentFrameIndex == 11) {
 				    return;

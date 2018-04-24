@@ -25,6 +25,7 @@ function Ball(canvas) {
             foodInPlay = false;
             launchPlantMode = false;
             launchMeatMode = false;
+            screenshake(20);
             return;
         }
 
