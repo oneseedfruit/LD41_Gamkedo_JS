@@ -66,7 +66,7 @@ function drawAll() {
 	    //timer.alertMessage();
 	    //drawFullnessLevel();
     }*/
-     if (!mainMenuState && !gameOverState && !helpState && !creditsState) {
+     if (!mainMenuState && !gameOverState && !helpState && !creditsState && !winState) {
         colorText("Fuel:", 345, 27, "white", "14px Arial", "center", 1);
     }
 }

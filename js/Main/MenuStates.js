@@ -39,15 +39,15 @@ function showHelpScreenText() {
 
 function showCreditsText() {
     colorText("CREDITS", canvas.width/2, 50, "white", "30px Arial", "center", 1);
-    colorText("Charleen Andrew: Truck game art, Food art ", 150, 150, "white", "16px Arial", "left", 1);
-    colorText("Randy Tan: ", 150, 180, "white", "16px Arial", "left", 1);
+    colorText("Charlene A.: Hippogriff Food truck design, game assets ", 150, 150, "white", "16px Arial", "left", 1);
+    colorText("Randy Tan: Idea, programmer (Unity, not shown in game)", 150, 180, "white", "16px Arial", "left", 1);
     colorText("Vignesh Ramesh: Car movement, Menu and Game over music, Camera follow", 150, 210, "white", "16px Arial", "left", 1);
     colorText("Herleen Dualan: Pong/Kitchen Scene, pong AI, Game art", 150, 240, "white", "16px Arial", "left", 1);
     colorText("Nick: Frame rate optimizaiton", 150, 270, "white", "16px Arial", "left", 1);
     colorText("Terrence McDonnell: Track code, pong code, main game code, Food Counter", 150, 300, "white", "16px Arial", "left", 1);
     colorText("Simon Hoffiz: Level Design & Level Art", 150, 330, "white", "16px Arial", "left", 1);
     colorText("Asix Jin: Main game music", 150, 360, "white", "16px Arial", "left", 1);
-    colorText("Cameron button: Refrigerator idea", 150, 390, "white", "16px Arial", "left", 1);
+    colorText("Cameron button: Refrigerator idea, programmer", 150, 390, "white", "16px Arial", "left", 1);
     colorText("Press  [SPACE]  To Return To Menu Or  [P]  to Play", canvas.width/2, 500, "white", "20px Arial", "center", 1);
 }
 
