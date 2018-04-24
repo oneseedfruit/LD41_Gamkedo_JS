@@ -30,7 +30,9 @@ function imageLoadingDoneSoStartGame() {
 function loadTrack(whichLevel) {
 	trackGrid = whichLevel.slice();
 	playerCar.reset(hippoCarPic, "Angry Bird");
-	DontCookMusic.loopSong();
+	if (!winState) {
+		DontCookMusic.loopSong();
+	}
 }
 
 
