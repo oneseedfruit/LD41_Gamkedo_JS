@@ -51,7 +51,7 @@ function Ball(canvas) {
             }
             launchPlantMode = false;
             launchMeatMode = false;
-            //screenshake(5);
+            screenshake(20);
             return; 
         } 
         
