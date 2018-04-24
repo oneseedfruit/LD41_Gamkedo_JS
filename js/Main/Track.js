@@ -150,7 +150,7 @@ function carTrackHandling(whichCar) {
 				}
 				else {
 					level++;
-					loadTrack(level); 
+					loadTrack(levels[level]); 
 				}
 				
 			} 
