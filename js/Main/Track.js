@@ -81,14 +81,15 @@ function drawTracks() {
 				if (!useImg)
 					console.log("Missing trackPics[" + tileKindHere + "] in drawTracks!");
 				else{
-					if(tileKindHere == TRACK_DIRT_MEAT || tileKindHere == TRACK_DIRT_VEGE ){
-						    canvasContext.drawImage(trackPics[TRACK_DIRT],drawTileX,drawTileY);
-							canvasContext.drawImage(useImg, (Math.floor(animTileOscillatorFrame* 0.70)%5)*TRACK_W,0,TRACK_W,TRACK_H, drawTileX,drawTileY,TRACK_W,TRACK_H);
-						}
+					
 					if(tileKindHere == TRACK_GROUND_MEAT || tileKindHere == TRACK_GROUND_VEGE ){
 						    canvasContext.drawImage(trackPics[TRACK_ROAD],drawTileX,drawTileY);
-							canvasContext.drawImage(useImg, (Math.floor(animTileOscillatorFrame* 0.70)%6)*TRACK_W,0,TRACK_W,TRACK_H, drawTileX,drawTileY,TRACK_W,TRACK_H);
+							canvasContext.drawImage(useImg, (Math.floor(animTileOscillatorFrame)%1 )*TRACK_W,0,TRACK_W,TRACK_H, drawTileX,drawTileY,TRACK_W,TRACK_H);
 					}
+					else if(tileKindHere == TRACK_DIRT_MEAT || tileKindHere == TRACK_DIRT_VEGE ){
+						    canvasContext.drawImage(trackPics[TRACK_DIRT],drawTileX,drawTileY);
+							canvasContext.drawImage(useImg, (Math.floor(animTileOscillatorFrame )%1)*TRACK_W,0,TRACK_W,TRACK_H, drawTileX,drawTileY,TRACK_W,TRACK_H);
+						}
 					else{
 							canvasContext.drawImage(useImg,drawTileX,drawTileY);
 
