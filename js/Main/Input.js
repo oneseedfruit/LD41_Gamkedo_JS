@@ -101,8 +101,7 @@ function keyPressed(evt) {
 		case KEY_D:
 		case KEY_RIGHT_ARROW:
 			break;
-        case KEY_SPACE:
-             switchBetweenDrivingAndCooking();   
+        case KEY_SPACE:   
             break;
         case KEY_P: 
             if (mainMenuState) {
