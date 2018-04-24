@@ -29,7 +29,7 @@ function showHelpScreenText() {
     colorText("How To Play", canvas.width/2, 50, "white", "30px Arial", "center", 1);
     colorText("You're hungry, and you know what that means...", canvas.width/2, 100, "white", "16px Arial", "center", 1);
     colorText("Time for some McGamkedonalds!", canvas.width/2, 120, "white", "16px Arial", "center", 1);
-    colorText("Be careful on your journey, and don't forget to collect food to feed your Hippogriff in kitchen mode!", canvas.width/2, 140, "white", "16px Arial", "center", 1);
+    colorText("Drive wisely, and don't forget to collect food to feed your Hippogriff in kitchen mode!", canvas.width/2, 140, "white", "16px Arial", "center", 1);
     colorText("Vehicle Mode:", 150, 210, "white", "20px Arial", "left", 1);
     colorText("Movement: W, A, S, D", 150, 240, "white", "16px Arial", "left", 1);
     colorText("Switch to Kitchen: SPACE", 150, 270, "white", "16px Arial", "left", 1);
