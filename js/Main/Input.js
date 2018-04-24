@@ -102,7 +102,12 @@ function keyPressed(evt) {
 		case KEY_RIGHT_ARROW:
 			break;
         case KEY_SPACE:
-            switchBetweenDrivingAndCooking();   
+            switchBetweenDrivingAndCooking();
+            if (winState) {
+                winState = false;
+                mainMenuState = true;
+                resetGame();
+            }   
             break;
         case KEY_P: 
             if (mainMenuState) {
@@ -115,12 +120,16 @@ function keyPressed(evt) {
                 isDrivingMode = true;
                 gameLevelInitialize();
             }
-             if (creditsState) {
+            if (creditsState) {
                 creditsState = false;
                 isDrivingMode = true;
                 gameLevelInitialize();
             }
-            
+            if (winState) {
+                winState = false;
+                mainMenuState = true;
+                resetGame();
+            }
             break;
         case KEY_H:
             if (mainMenuState) {
@@ -137,12 +146,27 @@ function keyPressed(evt) {
             break;
         case KEY_Q:
             pongReleaseMeat();
+            if (winState) {
+                winState = false;
+                mainMenuState = true;
+                resetGame();
+            }
             break;
         case KEY_E:
             pongReleaseVeg();
+            if (winState) {
+                winState = false;
+                mainMenuState = true;
+                resetGame();
+            }
             break;
         case KEY_ENTER:
             if (gameOverState) {
+                resetGame();
+            }
+            if (winState) {
+                winState = false;
+                mainMenuState = true;
                 resetGame();
             }
             // if (isDrivingMode) {
