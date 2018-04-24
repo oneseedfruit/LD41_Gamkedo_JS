@@ -90,7 +90,7 @@ function keyPressed(evt) {
 	
 	switch(evt.keyCode) {
 		case KEY_W:
-		case KEY_UP_ARROW: 
+		case KEY_UP_ARROW:
 			break;
 		case KEY_A:
 		case KEY_LEFT_ARROW:
@@ -101,7 +101,8 @@ function keyPressed(evt) {
 		case KEY_D:
 		case KEY_RIGHT_ARROW:
 			break;
-        case KEY_SPACE:   
+        case KEY_SPACE:
+            switchBetweenDrivingAndCooking();   
             break;
         case KEY_P: 
             if (mainMenuState) {
