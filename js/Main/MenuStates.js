@@ -45,7 +45,7 @@ function showCreditsText() {
     colorText("CREDITS", canvas.width/2, 50, "white", "30px Arial", "center", 1);
     colorText("Charlene A.: Hippogriff Food truck design, win/main screen, game assets, UI & icons", 150, 150, "white", "16px Arial", "left", 1);
     colorText("Randy Tan: Idea guy, programmer (Unity, not shown in game)", 150, 180, "white", "16px Arial", "left", 1);
-    colorText("Vignesh Ramesh: Car movement, Menu and Game over music, Camera follow", 150, 210, "white", "16px Arial", "left", 1);
+    colorText("Vignesh Ramesh: Car movement, Menu and Game over music, Camera follow, Level Change Code, Track Friction", 150, 210, "white", "16px Arial", "left", 1);
     colorText("Herleen Dualan (Kise): Pong/Kitchen Scene, pong AI/code, Game art", 150, 240, "white", "16px Arial", "left", 1);
     colorText("Nick: Frame rate optimizaiton", 150, 270, "white", "16px Arial", "left", 1);
     colorText("Terrence McDonnell: Track code, pong code, main game code, Food Counter", 150, 300, "white", "16px Arial", "left", 1);
