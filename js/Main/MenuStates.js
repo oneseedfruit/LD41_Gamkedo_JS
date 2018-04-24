@@ -148,9 +148,9 @@ function displayFoodStatus(sprite, cookedLevelWhenDisappears) {
         drawStroked(stateText,canvas.width/2,canvas.height/2, 
             "#983f5e","30px Arial", "center", 1);
     }
-    if (ball.cookedLevel == cookedLevelWhenDisappears) {
+/*    if (ball.cookedLevel == cookedLevelWhenDisappears) {
         stateText = "Nothing left of it...";
         drawStroked(stateText,canvas.width/2,canvas.height/2, 
             "#983f5e","30px Arial", "center", 1);
-    }
+    }*/
 }
