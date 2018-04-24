@@ -27,28 +27,33 @@ function drawScreenBlack() {
 
 function showHelpScreenText() {
     colorText("How To Play", canvas.width/2, 50, "white", "30px Arial", "center", 1);
-    colorText("Vehicle Mode:", 150, 150, "white", "20px Arial", "left", 1);
-    colorText("Movement: W, A, S, D", 150, 180, "white", "16px Arial", "left", 1);
-    colorText("Switch to Kitchen: SPACE, then in Kitchen Mode stop and wait for Q or E to be pressed", 150, 210, "white", "16px Arial", "left", 1);
-    colorText("Gather Ingredient: SPACE", 150, 300, "white", "16px Arial", "left", 1);
+    colorText("You're hungry, and you know what that means...", canvas.width/2, 100, "white", "16px Arial", "center", 1);
+    colorText("Time for some McGamkedonalds!", canvas.width/2, 120, "white", "16px Arial", "center", 1);
+    colorText("Drive wisely, and don't forget to collect food to feed your Hippogriff in kitchen mode!", canvas.width/2, 140, "white", "16px Arial", "center", 1);
+    colorText("Vehicle Mode:", 150, 210, "white", "20px Arial", "left", 1);
+    colorText("Movement: W, A, S, D", 150, 240, "white", "16px Arial", "left", 1);
+    colorText("Switch to Kitchen: SPACE", 150, 270, "white", "16px Arial", "left", 1);
     colorText("Kitchen Mode:", 150, 350, "white", "20px Arial", "left", 1);
     colorText("Movement: A, D", 150, 380, "white", "16px Arial", "left", 1);
-    colorText("Switch to Vehicle: SPACE", 150, 410, "white", "16px Arial", "left", 1);
-    colorText("Press  [SPACE]  To Return To Menu Or  [P]  to Play", canvas.width/2, 500, "white", "16px Arial", "center", 1);
+    colorText("Launch Meat: Q", 150, 410, "white", "16px Arial", "left", 1);
+    colorText("Launch Veggie: E", 150, 440, "white", "16px Arial", "left", 1);
+    colorText("Switch to Vehicle: SPACE", 150, 470, "white", "16px Arial", "left", 1);
+    colorText("Press  [SPACE]  To Return To Menu Or  [P]  to Play", canvas.width/2, 550, "white", "16px Arial", "center", 1);
 }
 
 function showCreditsText() {
     colorText("CREDITS", canvas.width/2, 50, "white", "30px Arial", "center", 1);
-    colorText("Charlene A.: Hippogriff Food truck design, game assets ", 150, 150, "white", "16px Arial", "left", 1);
-    colorText("Randy Tan: Idea, programmer (Unity, not shown in game)", 150, 180, "white", "16px Arial", "left", 1);
+    colorText("Charlene A.: Hippogriff Food truck design, game assets, UI & icons", 150, 150, "white", "16px Arial", "left", 1);
+    colorText("Randy Tan: Idea guy, programmer (Unity, not shown in game)", 150, 180, "white", "16px Arial", "left", 1);
     colorText("Vignesh Ramesh: Car movement, Menu and Game over music, Camera follow", 150, 210, "white", "16px Arial", "left", 1);
-    colorText("Herleen Dualan: Pong/Kitchen Scene, pong AI, Game art", 150, 240, "white", "16px Arial", "left", 1);
+    colorText("Herleen Dualan: Pong/Kitchen Scene, pong AI & pong code, Game art", 150, 240, "white", "16px Arial", "left", 1);
     colorText("Nick: Frame rate optimizaiton", 150, 270, "white", "16px Arial", "left", 1);
     colorText("Terrence McDonnell: Track code, pong code, main game code, Food Counter", 150, 300, "white", "16px Arial", "left", 1);
     colorText("Simon Hoffiz: Level Design & Level Art", 150, 330, "white", "16px Arial", "left", 1);
     colorText("Asix Jin: Main game music", 150, 360, "white", "16px Arial", "left", 1);
     colorText("Cameron button: Refrigerator idea, programmer", 150, 390, "white", "16px Arial", "left", 1);
-    colorText("Press  [SPACE]  To Return To Menu Or  [P]  to Play", canvas.width/2, 500, "white", "20px Arial", "center", 1);
+    colorText("-- THANK YOU, TEAM GAMKEDO PARROTS! --", canvas.width/2, 470, "white", "16px Arial", "center", 1);
+    colorText("Press  [SPACE]  To Return To Menu Or  [P]  to Play", canvas.width/2, 540, "white", "20px Arial", "center", 1);
 }
 
 
@@ -148,9 +153,9 @@ function displayFoodStatus(sprite, cookedLevelWhenDisappears) {
         drawStroked(stateText,canvas.width/2,canvas.height/2, 
             "#983f5e","30px Arial", "center", 1);
     }
-    if (ball.cookedLevel == cookedLevelWhenDisappears) {
+/*    if (ball.cookedLevel == cookedLevelWhenDisappears) {
         stateText = "Nothing left of it...";
         drawStroked(stateText,canvas.width/2,canvas.height/2, 
             "#983f5e","30px Arial", "center", 1);
-    }
+    }*/
 }
