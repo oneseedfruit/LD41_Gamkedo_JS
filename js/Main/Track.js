@@ -141,7 +141,7 @@ function carTrackHandling(whichCar) {
 
 		if(trackTypeIsPassable(tileHere)){
 			if(tileHere == TRACK_GOAL) {
-
+				level++;
 				if(level > levels.length - 1){
 					level = 0;
 					winState = true;
@@ -149,7 +149,6 @@ function carTrackHandling(whichCar) {
 					isKitchenMode = false;
 				}
 				else {
-					level++;
 					loadTrack(levels[level]); 
 				}
 				
